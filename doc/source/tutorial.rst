@@ -7,11 +7,11 @@ Create a workbook
 There is no need to create a file on the filesystem to get started with openpyxl.
 Just import the Worbook class and start using it ::
 
-	>>> from openpyxl.workbook import Workbook
+	>>> from legacy_openpyxl[.]workbook import Workbook
 	>>> wb = Workbook()
 	
 A workbook is always created with at least one worksheet. You can get it by 
-using the :func:`openpyxl.workbook.Workbook.get_active_sheet` method ::
+using the :func:`legacy_openpyxl[.]workbook.Workbook.get_active_sheet` method ::
 
 	>>> ws = wb.get_active_sheet()
 	
@@ -22,7 +22,7 @@ using the :func:`openpyxl.workbook.Workbook.get_active_sheet` method ::
 	first worksheet by using this method.
 
 You can also create new worksheets by using the 
-:func:`openpyxl.workbook.Workbook.create_sheet` method ::
+:func:`legacy_openpyxl[.]workbook.Workbook.create_sheet` method ::
 
 	>>> ws1 = wb.create_sheet() # insert at the end (default)
 	# or
@@ -35,14 +35,14 @@ You can change this name at any time with the `title` property::
 	ws.title = "New Title"
 	
 Once you gave a worksheet a name, you can get it using 
-the :func:`openpyxl.workbook.Workbook.get_sheet_by_name` method ::
+the :func:`legacy_openpyxl[.]workbook.Workbook.get_sheet_by_name` method ::
 
 	>>> ws3 = wb.get_sheet_by_name("New Title")
 	>>> ws is ws3
 	True
 	
 You can review the names of all worksheets of the workbook with the
-:func:`openpyxl.workbook.Workbook.get_sheet_names` method ::
+:func:`legacy_openpyxl[.]workbook.Workbook.get_sheet_names` method ::
 
 	>>> print wb.get_sheet_names()
 	['Sheet2', 'New Title', 'Sheet1']
@@ -56,7 +56,7 @@ Accessing one cell
 
 Now we know how to access a worksheet, we can start modifying cells content.
 
-To access a cell, use the :func:`openpyxl.worksheet.Worksheet.cell` method::
+To access a cell, use the :func:`legacy_openpyxl[.]worksheet.Worksheet.cell` method::
 
 	>>> c = ws.cell('A4')
 	
@@ -89,7 +89,7 @@ Accessing many cells
 ++++++++++++++++++++
 
 If you want to access a `range`, wich is a two-dimension array of cells, you can use the 
-:func:`openpyxl.worksheet.Worksheet.range` method::
+:func:`legacy_openpyxl[.]worksheet.Worksheet.range` method::
 
 	>>> ws.range('A1:C2')
 	((<Cell Sheet1.A1>, <Cell Sheet1.B1>, <Cell Sheet1.C1>),
@@ -108,7 +108,7 @@ If you want to access a `range`, wich is a two-dimension array of cells, you can
 Data storage
 ++++++++++++
 	
-Once we have a :class:`openpyxl.cell.Cell`, we can assign it a value::
+Once we have a :class:`legacy_openpyxl[.]cell.Cell`, we can assign it a value::
 
 	>>> c.value = 'hello, world'
 	>>> print c.value
@@ -136,9 +136,9 @@ There is also a neat format detection feature that converts data on the fly::
 Saving to a file
 ================
 
-To save a workbook, just import the :func:`openpyxl.writer.excel.save_workbook` function::
+To save a workbook, just import the :func:`legacy_openpyxl[.]writer.excel.save_workbook` function::
 
-	>>> from openpyxl.writer.excel import save_workbook
+	>>> from legacy_openpyxl[.]writer.excel import save_workbook
 	>>> save_workbook(wb, 'test.xlsx')
 	True
 	
@@ -154,10 +154,10 @@ To save a workbook, just import the :func:`openpyxl.writer.excel.save_workbook` 
 Loading from a file
 =================== 
 	
-The same way as writing, you can import :func:`openpyxl.reader.excel.load_workbook` to 
+The same way as writing, you can import :func:`legacy_openpyxl[.]reader.excel.load_workbook` to 
 open an existing workbook::
 
-	>>> from openpyxl.reader.excel import load_workbook
+	>>> from legacy_openpyxl[.]reader.excel import load_workbook
 	>>> wb2 = load_workbook('test.xlsx')
 	>>> print wb2.get_sheet_names()
 	['Sheet2', 'New Title', 'Sheet1']

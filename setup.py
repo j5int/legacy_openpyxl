@@ -15,24 +15,24 @@ That uses the manifest.in file for data files rather than searching for them her
 
 from setuptools import setup, Extension, find_packages
 import sys
-sys.path.append('src')#so we can import openpyxl
-import openpyxl#to fetch __version__ etc
+sys.path.append('src')#so we can import legacy_openpyxl
+import legacy_openpyxl#to fetch __version__ etc
 
-setup(name = "openpyxl",
+setup(name = "legacy_openpyxl",
     packages = find_packages('src'),
     include_package_data = True,
     package_dir = {'':'src'},
-    package_data = {'': ['openpyxl/tests/*.xml', 'openpyxl/tests/*.xslx']}, #DOESN'T AFFECT zip DISTRIBUTION. MUST MODIFY MANIFEST.in TOO
+    package_data = {'': ['legacy_openpyxl/tests/*.xml', 'openpyxl/tests/*.xslx']}, #DOESN'T AFFECT zip DISTRIBUTION. MUST MODIFY MANIFEST.in TOO
     #metadata
-    version = openpyxl.__version__,
+    version = legacy_openpyxl.__version__,
     description = "A Python library to read/write Excel 2007 xlsx/xlsm files",
-    long_description = "openpyxl is a pure python reader and writer of Excel OpenXML files." + \
+    long_description = "legacy_openpyxl is a pure python reader and writer of Excel OpenXML files." + \
         " It is ported from the PHPExcel project",
-    author = openpyxl.__author__,
-    author_email = openpyxl.__author_email__,
-    url = openpyxl.__url__,
-    license = openpyxl.__license__,
-    download_url = openpyxl.__downloadUrl__,
+    author = legacy_openpyxl.__author__,
+    author_email = legacy_openpyxl.__author_email__,
+    url = legacy_openpyxl.__url__,
+    license = legacy_openpyxl.__license__,
+    download_url = legacy_openpyxl.__downloadUrl__,
     test_suite = 'nose.collector',
     classifiers = ['Development Status :: 4 - Beta',
           'Operating System :: MacOS :: MacOS X',
