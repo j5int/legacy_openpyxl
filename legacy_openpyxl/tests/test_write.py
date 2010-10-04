@@ -11,7 +11,7 @@ from nose.tools import eq_, with_setup
 from legacy_openpyxl.tests.helper import TMPDIR, DATADIR, \
         assert_equals_file_content, clean_tmpdir, make_tmpdir
 from legacy_openpyxl.workbook import Workbook
-from legacy_openpyxl.writer.excel import ExcelWriter, save_workbook
+from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.writer.workbook import write_workbook, write_workbook_rels
 from legacy_openpyxl.writer.worksheet import write_worksheet, write_worksheet_rels
 from legacy_openpyxl.writer.strings import write_string_table
