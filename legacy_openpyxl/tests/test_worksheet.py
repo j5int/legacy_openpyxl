@@ -5,9 +5,10 @@ from nose.tools import eq_, raises, assert_raises
 
 # package imports
 from legacy_openpyxl.workbook import Workbook
-from legacy_openpyxl.worksheet import Worksheet
+from legacy_openpyxl.worksheet import Worksheet, Relationship
 from legacy_openpyxl.cell import Cell
-from legacy_openpyxl.shared.exc import CellCoordinatesException, SheetTitleException
+from legacy_openpyxl.shared.exc import CellCoordinatesException, \
+        SheetTitleException, InsufficientCoordinatesException
 
 
 class TestWorksheet():
@@ -75,6 +76,11 @@ class TestWorksheet():
         cell = ws.cell(row=8, column=4)
         eq_('D8', cell.get_coordinate())
 
+    @raises(InsufficientCoordinatesException)
+    def test_cell_insufficient_coordinates(self):
+        ws = Worksheet(self.wb)
+        cell = ws.cell(row=8)
+
     def test_cell_range_name(self):
         ws = Worksheet(self.wb)
         self.wb.create_named_range('test_range_single', ws, 'B12')
@@ -110,3 +116,7 @@ class TestWorksheet():
         eq_("rId2", ws.relationships[1].id)
         eq_("http://test2.com", ws.relationships[1].target)
         eq_("External", ws.relationships[1].target_mode)
+
+    @raises(ValueError)
+    def test_bad_relationship_type(self):
+        rel = Relationship('bad_type')
