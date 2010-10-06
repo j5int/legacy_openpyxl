@@ -3,9 +3,6 @@
 
 """Write the theme xml based on a fixed string."""
 
-# Python stdlib imports
-from StringIO import StringIO
-
 # package imports
 from legacy_openpyxl.shared.xmltools import fromstring, get_document_content
 
