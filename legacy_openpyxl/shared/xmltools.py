@@ -19,7 +19,7 @@ except ImportError:
             QName, fromstring, tostring
 
 # package imports
-from legacy_openpyxl import __name__ as prefix
+from .. import __name__ as prefix
 
 
 def get_document_content(xml_node):

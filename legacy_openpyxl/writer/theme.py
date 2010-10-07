@@ -4,7 +4,7 @@
 """Write the theme xml based on a fixed string."""
 
 # package imports
-from legacy_openpyxl.shared.xmltools import fromstring, get_document_content
+from ..shared.xmltools import fromstring, get_document_content
 
 
 def write_theme():

@@ -8,9 +8,9 @@ __docformat__ = "restructuredtext en"
 import datetime
 
 # package imports
-from legacy_openpyxl.worksheet import Worksheet
-from legacy_openpyxl.namedrange import NamedRange
-from legacy_openpyxl.style import Style
+from .worksheet import Worksheet
+from .namedrange import NamedRange
+from .style import Style
 
 
 class DocumentProperties(object):

@@ -15,10 +15,10 @@ import datetime
 import re
 
 # package imports
-from legacy_openpyxl.shared.date_time import SharedDate
-from legacy_openpyxl.shared.exc import CellCoordinatesException, \
+from .shared.date_time import SharedDate
+from .shared.exc import CellCoordinatesException, \
         ColumnStringIndexException, DataTypeException
-from legacy_openpyxl.style import NumberFormat
+from .style import NumberFormat
 
 # constants
 COORD_RE = re.compile('^[$]?([A-Z]+)[$]?(\d+)$')

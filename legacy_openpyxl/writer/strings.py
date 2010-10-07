@@ -6,7 +6,7 @@
 from StringIO import StringIO
 
 # package imports
-from legacy_openpyxl.shared.xmltools import start_tag, end_tag, tag, XMLGenerator
+from ..shared.xmltools import start_tag, end_tag, tag, XMLGenerator
 
 
 def create_string_table(workbook):

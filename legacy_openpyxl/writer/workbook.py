@@ -3,12 +3,12 @@
 """Write the workbook global settings to the archive."""
 
 # package imports
-from legacy_openpyxl.shared.xmltools import Element, SubElement
-from legacy_openpyxl.cell import absolute_coordinate
-from legacy_openpyxl.shared.xmltools import get_document_content
-from legacy_openpyxl.shared.ooxml import NAMESPACES, ARC_CORE, ARC_WORKBOOK, \
+from ..shared.xmltools import Element, SubElement
+from ..cell import absolute_coordinate
+from ..shared.xmltools import get_document_content
+from ..shared.ooxml import NAMESPACES, ARC_CORE, ARC_WORKBOOK, \
         ARC_APP, ARC_THEME, ARC_STYLE, ARC_SHARED_STRINGS
-from legacy_openpyxl.shared.date_time import datetime_to_W3CDTF
+from ..shared.date_time import datetime_to_W3CDTF
 
 
 def write_properties_core(properties):
