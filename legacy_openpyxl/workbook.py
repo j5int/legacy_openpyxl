@@ -34,6 +34,7 @@ import datetime
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.namedrange import NamedRange
 from legacy_openpyxl.style import Style
+from legacy_openpyxl.writer.excel import save_workbook
 
 
 class DocumentProperties(object):
@@ -155,3 +156,7 @@ class Workbook(object):
     def remove_named_range(self, named_range):
         """Remove a named_range from this workbook."""
         self._named_ranges.remove(named_range)
+
+    def save(self, filename):
+        """ shortcut """
+        save_workbook(self, filename)
