@@ -35,7 +35,7 @@ from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.style import NumberFormat, Style
-from legacy_openpyxl.reader.worksheet import read_worksheet
+from legacy_openpyxl.reader.worksheet import read_worksheet, read_dimension
 from legacy_openpyxl.reader.excel import load_workbook
 
 
@@ -76,6 +76,15 @@ def test_read_nostring_workbook():
     wb = load_workbook(genuine_wb)
     assert isinstance(wb, Workbook)
 
+def test_read_dimension():
+
+    path = os.path.join(DATADIR, 'reader', 'sheet2.xml')
+
+    with open(path) as handle:
+
+        dimension = read_dimension(xml_source = handle.read())
+
+    eq_(('D', 1, 'K', 30), dimension)
 
 class TestReadWorkbookWithStyles(object):
 
