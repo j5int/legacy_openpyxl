@@ -10,6 +10,11 @@ Module :mod:`legacy_openpyxl[.]worksheet` -- Worksheet
 .. autoclass:: openpyxl.worksheet.Worksheet
    	:members:
    	
+Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Iterable Worksheet
+=============================================================
+
+.. autoclass:: openpyxl.reader.iter_worksheet.IterableWorksheet
+    :members:
    	 
 Module :mod:`legacy_openpyxl[.]cell` -- Worksheet Cell
 =============================================================
