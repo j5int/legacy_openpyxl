@@ -30,6 +30,7 @@ import os.path as osp
 # package imports
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.namedrange import NamedRange
+from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
 from legacy_openpyxl.tests.helper import TMPDIR, clean_tmpdir, make_tmpdir
 
 
@@ -43,6 +44,13 @@ def test_create_sheet():
     wb = Workbook()
     new_sheet = wb.create_sheet(0)
     eq_(new_sheet, wb.worksheets[0])
+
+
+@raises(ReadOnlyWorkbookException)
+def test_create_sheet_readonly():
+    wb = Workbook()
+    wb._set_optimized_read()
+    wb.create_sheet()
 
 
 def test_remove_sheet():
