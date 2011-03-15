@@ -10,10 +10,13 @@ Module :mod:`legacy_openpyxl[.]worksheet` -- Worksheet
 .. autoclass:: openpyxl.worksheet.Worksheet
    	:members:
    	
-Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Iterable Worksheet
-==================================================================
+Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Optimized reader
+================================================================
 
 .. autoclass:: openpyxl.reader.iter_worksheet.IterableWorksheet
+    :members:
+
+.. autoclass:: openpyxl.reader.iter_worksheet.RawCell
     :members:
    	 
 Module :mod:`legacy_openpyxl[.]cell` -- Worksheet Cell
@@ -22,12 +25,13 @@ Module :mod:`legacy_openpyxl[.]cell` -- Worksheet Cell
 .. autoclass:: openpyxl.cell.Cell
    	:members: 
 
-Module :mod:`legacy_openpyxl[.]writer.excel` -- Filesystem writer
-=============================================================
-
-.. autofunction:: openpyxl.writer.excel.save_workbook
-
 Module :mod:`legacy_openpyxl[.]reader.excel` -- Filesystem reader
 =============================================================
 
 .. autofunction:: openpyxl.reader.excel.load_workbook
+
+Module :mod:`legacy_openpyxl[.]writer.dump_worksheet` -- Optimized writer
+=================================================================
+
+.. autoclass:: openpyxl.writer.dump_worksheet.DumpWorksheet
+    :members:
