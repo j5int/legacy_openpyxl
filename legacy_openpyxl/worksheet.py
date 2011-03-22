@@ -1,6 +1,6 @@
-# file openpyxl/worksheet.py
+# file legacy_openpyxl/worksheet.py
 
-# Copyright (c) 2010 openpyxl
+# Copyright (c) 2010 legacy_openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,8 @@
 import re
 
 # package imports
-from legacy_openpyxl.cell import Cell, coordinate_from_string, \
+import legacy_openpyxl.cell
+from legacy_openpyxl.cell import coordinate_from_string, \
     column_index_from_string, get_column_letter
 from legacy_openpyxl.shared.exc import SheetTitleException, \
     InsufficientCoordinatesException, CellCoordinatesException, \
@@ -186,7 +187,7 @@ class Worksheet(object):
     """Represents a worksheet.
 
     Do not create worksheets yourself,
-    use :func:`legacy_openpyxl.workbook.Workbook.create_sheet` instead
+    use :func:`legacy_legacy_openpyxl.workbook.Workbook.create_sheet` instead
 
     """
     BREAK_NONE = 0
@@ -290,7 +291,7 @@ class Worksheet(object):
 
         :raise: InsufficientCoordinatesException when coordinate or (row and column) are not given
 
-        :rtype: :class:`legacy_openpyxl.cell.Cell`
+        :rtype: :class:`legacy_legacy_openpyxl.cell.Cell`
 
         """
         if not coordinate:
@@ -309,7 +310,7 @@ class Worksheet(object):
 
         if not coordinate in self._cells:
             column, row = coordinate_from_string(coordinate)
-            new_cell = Cell(self, column, row)
+            new_cell = legacy_openpyxl.cell.Cell(self, column, row)
             self._cells[coordinate] = new_cell
             if column not in self.column_dimensions:
                 self.column_dimensions[column] = ColumnDimension(column)
@@ -355,7 +356,7 @@ class Worksheet(object):
         :param column: number of columns to offset
         :type column: int
 
-        :rtype: tuples of tuples of :class:`legacy_openpyxl.cell.Cell`
+        :rtype: tuples of tuples of :class:`legacy_legacy_openpyxl.cell.Cell`
 
         """
         if ':' in range_string:
