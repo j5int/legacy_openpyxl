@@ -34,6 +34,7 @@ from legacy_openpyxl.shared.xmltools import XMLGenerator, get_document_content, 
         start_tag, end_tag, tag
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.shared.ooxml import MAX_COLUMN, MAX_ROW
+from legacy_openpyxl.shared import NUMERIC_TYPES
 from tempfile import NamedTemporaryFile
 from legacy_openpyxl.writer.excel import ExcelWriter
 from legacy_openpyxl.writer.strings import write_string_table
@@ -190,7 +191,7 @@ class DumpWorksheet(Worksheet):
 
             if isinstance(cell, bool):
                 dtype = 'boolean'
-            elif isinstance(cell, (int, float)):
+            elif isinstance(cell, NUMERIC_TYPES):
                 dtype = 'numeric'
             elif isinstance(cell, (datetime.datetime, datetime.date)):
                 dtype = 'datetime'
