@@ -30,7 +30,6 @@
 from StringIO import StringIO
 import warnings
 import operator
-from functools import partial
 from itertools import ifilter, groupby
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.cell import coordinate_from_string, get_column_letter, Cell
@@ -41,7 +40,7 @@ from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
 from legacy_openpyxl.shared.ooxml import (MIN_COLUMN, MAX_COLUMN, PACKAGE_WORKSHEETS,
     MAX_ROW, MIN_ROW, ARC_SHARED_STRINGS, ARC_APP, ARC_STYLE)
-from xml.etree.cElementTree import iterparse
+from legacy_openpyxl.shared.compat import iterparse
 from zipfile import ZipFile
 import legacy_openpyxl.cell
 import re
