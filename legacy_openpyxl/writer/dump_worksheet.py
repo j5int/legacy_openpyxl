@@ -40,7 +40,7 @@ from legacy_openpyxl.shared.xmltools import (XMLGenerator, get_document_content,
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.shared.ooxml import MAX_COLUMN, MAX_ROW
 from legacy_openpyxl.shared import NUMERIC_TYPES
-from tempfile import NamedTemporaryFile
+from legacy_openpyxl.shared.compat import NamedTemporaryFile
 from legacy_openpyxl.writer.excel import ExcelWriter
 from legacy_openpyxl.writer.strings import write_string_table
 from legacy_openpyxl.writer.styles import StyleWriter
