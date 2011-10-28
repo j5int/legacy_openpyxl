@@ -35,7 +35,7 @@ from legacy_openpyxl.shared.exc import CellCoordinatesException, \
         NamedRangeException
 
 
-class TestWorksheet():
+class TestWorksheet(object):
 
     @classmethod
     def setup_class(cls):
