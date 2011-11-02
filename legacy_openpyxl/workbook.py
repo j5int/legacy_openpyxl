@@ -39,6 +39,7 @@ from legacy_openpyxl.namedrange import NamedRange
 from legacy_openpyxl.style import Style
 from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
+from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900, CALENDAR_MAC_1904
 
 
 class DocumentProperties(object):
@@ -55,6 +56,7 @@ class DocumentProperties(object):
         self.keywords = ''
         self.category = ''
         self.company = 'Microsoft Corporation'
+        self.excel_base_date = CALENDAR_WINDOWS_1900
 
 
 class DocumentSecurity(object):
@@ -86,6 +88,10 @@ class Workbook(object):
 
         if not optimized_write:
             self.worksheets.append(Worksheet(self))
+
+    @property
+    def excel_base_date(self):
+        return self.properties.excel_base_date
 
     def _set_optimized_read(self):
         self.__optimized_read = True
