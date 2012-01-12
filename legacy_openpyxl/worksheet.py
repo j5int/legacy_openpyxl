@@ -39,6 +39,7 @@ from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.style import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.drawing import Drawing
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
+from legacy_openpyxl.shared.compat import OrderedDict
 
 _DEFAULTS_STYLE_HASH = hash(DEFAULTS_STYLE)
 
@@ -143,7 +144,7 @@ class PageMargins(object):
 
     @property
     def margins(self):
-        margins = {}
+        margins = OrderedDict()
         for margin_name in self.valid_margins:
             margin_value = getattr(self, margin_name)
             if margin_value:
