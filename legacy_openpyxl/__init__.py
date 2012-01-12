@@ -35,6 +35,10 @@ from legacy_openpyxl import reader
 from legacy_openpyxl import shared
 from legacy_openpyxl import writer
 
+# shortcuts
+from legacy_openpyxl.workbook import Workbook
+from legacy_openpyxl.reader.excel import load_workbook
+
 # constants
 
 __major__ = 1  # for major interface/format changes

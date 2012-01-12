@@ -28,10 +28,7 @@
 import datetime
 import os
 
-try:
-    from collections import OrderedDict
-except ImportError:
-    from legacy_openpyxl.writer.odict import OrderedDict
+from legacy_openpyxl.shared.compat import OrderedDict
 
 from legacy_openpyxl.cell import column_index_from_string, get_column_letter, Cell
 from legacy_openpyxl.worksheet import Worksheet
