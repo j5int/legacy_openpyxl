@@ -38,7 +38,7 @@ import datetime
 import re
 
 # package imports
-from legacy_openpyxl.shared.compat import all
+from legacy_openpyxl.shared.compat import all, unicode, basestring
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.shared.exc import CellCoordinatesException, \
         ColumnStringIndexException, DataTypeException
@@ -191,7 +191,7 @@ class Cell(object):
         return self.parent.encoding
 
     def __repr__(self):
-        return u"<Cell %s.%s>" % (self.parent.title, self.get_coordinate())
+        return unicode("<Cell %s.%s>") % (self.parent.title, self.get_coordinate())
 
     def check_string(self, value):
         """Check string coding, length, and line break character"""

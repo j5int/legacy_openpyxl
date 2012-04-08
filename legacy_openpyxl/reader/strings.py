@@ -28,6 +28,7 @@
 # package imports
 from legacy_openpyxl.shared.xmltools import fromstring, QName
 from legacy_openpyxl.shared.ooxml import NAMESPACES
+from legacy_openpyxl.shared.compat import unicode
 
 
 def read_string_table(xml_source):

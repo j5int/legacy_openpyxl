@@ -38,6 +38,7 @@ from legacy_openpyxl.reader.strings import read_string_table
 from legacy_openpyxl.reader.style import read_style_table, NumberFormat
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
+from legacy_openpyxl.shared.compat import unicode
 from legacy_openpyxl.shared.ooxml import (MIN_COLUMN, MAX_COLUMN, PACKAGE_WORKSHEETS,
     MAX_ROW, MIN_ROW, ARC_SHARED_STRINGS, ARC_APP, ARC_STYLE)
 from legacy_openpyxl.shared.compat import iterparse
