@@ -27,6 +27,13 @@
 
 # Python stdlib imports
 from zipfile import ZipFile, ZIP_DEFLATED
+try:
+    # Python 2
+    from StringIO import StringIO
+    BytesIO = StringIO
+except ImportError:
+    # Python 3
+    from io import BytesIO, StringIO
 
 # package imports
 from legacy_openpyxl.shared.ooxml import ARC_SHARED_STRINGS, ARC_CONTENT_TYPES, \
@@ -42,7 +49,6 @@ from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.writer.drawings import DrawingWriter, ShapeWriter
 from legacy_openpyxl.writer.charts import ChartWriter
 from legacy_openpyxl.writer.worksheet import write_worksheet, write_worksheet_rels
-from legacy_openpyxl.shared.compat import StringIO
 
 
 class ExcelWriter(object):
@@ -145,7 +151,7 @@ def save_workbook(workbook, filename):
 def save_virtual_workbook(workbook):
     """Return an in-memory workbook, suitable for a Django response."""
     writer = ExcelWriter(workbook)
-    temp_buffer = StringIO()
+    temp_buffer = BytesIO()
     try:
         archive = ZipFile(temp_buffer, 'w', ZIP_DEFLATED)
         writer.write_data(archive)
