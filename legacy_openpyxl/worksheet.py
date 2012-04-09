@@ -39,7 +39,7 @@ from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.style import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.drawing import Drawing
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
-from legacy_openpyxl.shared.compat import OrderedDict
+from legacy_openpyxl.shared.compat import OrderedDict, unicode
 
 _DEFAULTS_STYLE_HASH = hash(DEFAULTS_STYLE)
 
@@ -219,6 +219,8 @@ class Worksheet(object):
     use :func:`legacy_legacy_openpyxl.workbook.Workbook.create_sheet` instead
 
     """
+    repr_format = unicode('<Worksheet "%s">')
+
     BREAK_NONE = 0
     BREAK_ROW = 1
     BREAK_COLUMN = 2
@@ -278,7 +280,7 @@ class Worksheet(object):
         self.orientation = None
 
     def __repr__(self):
-        return u'<Worksheet "%s">' % self.title
+        return self.repr_format % self.title
 
     @property
     def parent(self):
