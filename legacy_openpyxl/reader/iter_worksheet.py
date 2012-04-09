@@ -1,6 +1,6 @@
-# file legacy_openpyxl/reader/iter_worksheet.py
+# file openpyxl/reader/iter_worksheet.py
 
-# Copyright (c) 2010-2011 legacy_openpyxl
+# Copyright (c) 2010-2011 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,23 +27,19 @@
 *Still very raw*
 """
 
-from StringIO import StringIO
 import warnings
 import operator
-from itertools import ifilter, groupby
+from itertools import  groupby
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.cell import coordinate_from_string, get_column_letter, Cell
-from legacy_openpyxl.reader.excel import get_sheet_ids
-from legacy_openpyxl.reader.strings import read_string_table
-from legacy_openpyxl.reader.style import read_style_table, NumberFormat
+from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
 from legacy_openpyxl.shared.compat import unicode
 from legacy_openpyxl.shared.ooxml import (MIN_COLUMN, MAX_COLUMN, PACKAGE_WORKSHEETS,
-    MAX_ROW, MIN_ROW, ARC_SHARED_STRINGS, ARC_APP, ARC_STYLE)
-from legacy_openpyxl.shared.compat import iterparse
+    MAX_ROW, MIN_ROW, ARC_STYLE)
+from legacy_openpyxl.shared.compat import iterparse, xrange
 from zipfile import ZipFile
-import legacy_openpyxl.cell
 import re
 import tempfile
 import zlib
@@ -88,7 +84,7 @@ except ImportError:
 
 
 class RawCell(BaseRawCell):
-    """Optimized version of the :class:`legacy_openpyxl.cell.Cell`, using named tuples.
+    """Optimized version of the :class:`openpyxl.cell.Cell`, using named tuples.
 
     Useful attributes are:
 
@@ -316,7 +312,7 @@ class IterableWorksheet(Worksheet):
 
 def unpack_worksheet(archive, filename):
 
-    temp_file = tempfile.TemporaryFile(mode='r+', prefix='legacy_openpyxl.', suffix='.unpack.temp')
+    temp_file = tempfile.TemporaryFile(mode='r+', prefix='openpyxl.', suffix='.unpack.temp')
 
     zinfo = archive.getinfo(filename)
 
