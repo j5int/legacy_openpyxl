@@ -38,7 +38,7 @@ from legacy_openpyxl.shared.exc import SheetTitleException, \
 from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.style import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
-from legacy_openpyxl.shared.compat import OrderedDict, unicode, xrange
+from legacy_openpyxl.shared.compat import OrderedDict, unicode, xrange, basestring
 
 _DEFAULTS_STYLE_HASH = hash(DEFAULTS_STYLE)
 
