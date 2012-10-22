@@ -31,13 +31,13 @@ from zipfile import ZipFile, ZIP_DEFLATED, BadZipfile
 # package imports
 from legacy_openpyxl.shared.exc import OpenModeError, InvalidFileException
 from legacy_openpyxl.shared.ooxml import (ARC_SHARED_STRINGS, ARC_CORE, ARC_WORKBOOK,
-                                   PACKAGE_WORKSHEETS, ARC_STYLE)
+                                   PACKAGE_WORKSHEETS, ARC_STYLE, ARC_THEME)
 from legacy_openpyxl.shared.compat import unicode, file
 from legacy_openpyxl.workbook import Workbook, DocumentProperties
 from legacy_openpyxl.reader.strings import read_string_table
 from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.reader.workbook import (read_sheets_titles, read_named_ranges,
-        read_properties_core, read_excel_base_date)
+        read_properties_core, read_excel_base_date, get_sheet_ids)
 from legacy_openpyxl.reader.worksheet import read_worksheet
 from legacy_openpyxl.reader.iter_worksheet import unpack_worksheet
 # Use exc_info for Python 2 compatibility with "except Exception[,/ as] e"
@@ -134,6 +134,7 @@ def _load_workbook(wb, archive, filename, use_iterators):
         string_table = read_string_table(archive.read(ARC_SHARED_STRINGS))
     except KeyError:
         string_table = {}
+    wb.loaded_theme = archive.read(ARC_THEME)
     style_table = read_style_table(archive.read(ARC_STYLE))
 
     wb.properties.excel_base_date = read_excel_base_date(xml_source=archive.read(ARC_WORKBOOK))
