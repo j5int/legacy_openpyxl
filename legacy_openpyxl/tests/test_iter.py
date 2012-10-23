@@ -28,6 +28,7 @@ import os.path as osp
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.reader.iter_worksheet import get_range_boundaries
 from legacy_openpyxl.reader.excel import load_workbook
+from legacy_openpyxl.shared.compat import xrange
 import datetime
 
 class TestWorksheet(object):

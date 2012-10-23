@@ -1,5 +1,3 @@
-# file openpyxl/shared/__init__.py
-
 # Copyright (c) 2010-2011 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +21,32 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-"""Imports for the openpyxl.shared namespace."""
+try:
+    # Python 2
+    basestring = basestring
+except NameError:
+    # Python 3
+    basestring = str
 
-# package imports
-from legacy_openpyxl.shared import date_time
-from legacy_openpyxl.shared import exc
-from legacy_openpyxl.shared import ooxml
-from legacy_openpyxl.shared import password_hasher
-from legacy_openpyxl.shared import xmltools
-from legacy_openpyxl.shared.compat import long
-import decimal
+try:
+    # Python 2
+    unicode = unicode
+except NameError:
+    # Python 3
+    unicode = str
 
-NUMERIC_TYPES = (int, float, long, decimal.Decimal)
+try:
+    # Python 3
+    from io import BytesIO, StringIO
+except:
+    # Python 2
+    from StringIO import StringIO
+    BytesIO = StringIO
 
+try:
+    # Python 3
+    from io import BufferedReader
+    file = BufferedReader
+except:
+    # Python 2
+    file = file
