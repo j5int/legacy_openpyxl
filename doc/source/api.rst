@@ -2,14 +2,14 @@ Module :mod:`legacy_openpyxl[.]workbook` -- Workbook
 =============================================================
 
 .. autoclass:: openpyxl.workbook.Workbook
-   	:members:
-   	
+       :members:
+       
 Module :mod:`legacy_openpyxl[.]worksheet` -- Worksheet
 =============================================================
 
 .. autoclass:: openpyxl.worksheet.Worksheet
-   	:members:
-   	
+       :members:
+       
 Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Optimized reader
 ================================================================
 
@@ -18,12 +18,12 @@ Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Optimized reader
 
 .. autoclass:: openpyxl.reader.iter_worksheet.RawCell
     :members:
-   	 
+        
 Module :mod:`legacy_openpyxl[.]cell` -- Worksheet Cell
 =============================================================
 
 .. autoclass:: openpyxl.cell.Cell
-   	:members: 
+       :members: 
 
 Module :mod:`legacy_openpyxl[.]reader.excel` -- Filesystem reader
 =============================================================
