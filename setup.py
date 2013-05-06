@@ -20,15 +20,10 @@ them here.
 """
 
 from setuptools import setup, Extension, find_packages
-import sys
-import legacy_openpyxl#to fetch __version__ etc
+import legacy_openpyxl  # to fetch __version__ etc
 
 setup(name = 'legacy_openpyxl',
-    packages = find_packages('.'),
-    include_package_data = True,
-    package_dir = {'': '.'},
-    # Doesn't affect zip distribution. Must modify MANIFEST.in too.
-    package_data = {'': ['legacy_openpyxl/tests/*.xml', 'openpyxl/tests/*.xslx']},
+    packages = find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     # metadata
     version = legacy_openpyxl.__version__,
     description = "A Python library to read/write Excel 2007 xlsx/xlsm files",
@@ -40,10 +35,12 @@ setup(name = 'legacy_openpyxl',
     license = legacy_openpyxl.__license__,
     download_url = legacy_openpyxl.__downloadUrl__,
     test_suite = 'nose.collector',
+    tests_require = ['nose'],
     classifiers = ['Development Status :: 4 - Beta',
           'Operating System :: MacOS :: MacOS X',
           'Operating System :: Microsoft :: Windows',
           'Operating System :: POSIX',
           'License :: OSI Approved :: MIT License',
-          'Programming Language :: Python'],
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 3'],
     )

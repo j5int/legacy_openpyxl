@@ -25,6 +25,9 @@ import sys
 from legacy_openpyxl.shared.compat.elementtree import iterparse
 from legacy_openpyxl.shared.compat.tempnamedfile import NamedTemporaryFile
 from legacy_openpyxl.shared.compat.allany import all, any
+from legacy_openpyxl.shared.compat.strings import basestring, unicode, StringIO, file, BytesIO
+from legacy_openpyxl.shared.compat.numbers import long
+from legacy_openpyxl.shared.compat.itertools import xrange
 
 try:
     from collections import OrderedDict
