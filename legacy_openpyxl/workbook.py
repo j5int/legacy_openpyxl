@@ -41,6 +41,8 @@ from legacy_openpyxl.style import Style
 from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
 from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900, CALENDAR_MAC_1904
+from legacy_openpyxl.shared.xmltools import fromstring, QName
+from legacy_openpyxl.shared.ooxml import NAMESPACES
 
 
 class DocumentProperties(object):
@@ -91,6 +93,13 @@ class Workbook(object):
 
         if not optimized_write:
             self.worksheets.append(Worksheet(self))
+
+    def read_workbook_settings(self, xml_source):
+        root = fromstring(xml_source)
+        view = root.find('*/' + QName(NAMESPACES['main'], 'workbookView').text)
+
+        if 'activeTab' in view.attrib:
+            self._active_sheet_index = int(view.attrib['activeTab'])
 
     @property
     def _local_data(self):
