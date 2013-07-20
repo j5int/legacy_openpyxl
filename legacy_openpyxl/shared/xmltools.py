@@ -36,10 +36,10 @@ from legacy_openpyxl.shared.compat.sax import XMLGenerator
 from legacy_openpyxl.shared.compat import OrderedDict
 try:
     from xml.etree.ElementTree import ElementTree, Element, SubElement, \
-            QName, fromstring, tostring
+            QName, fromstring, tostring, register_namespace
 except ImportError:
     from cElementTree import ElementTree, Element, SubElement, \
-            QName, fromstring, tostring
+            QName, fromstring, tostring, register_namespace
 
 # package imports
 from legacy_openpyxl import __name__ as prefix
