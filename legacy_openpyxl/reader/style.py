@@ -31,6 +31,7 @@ from legacy_openpyxl.shared.exc import MissingNumberFormat
 from legacy_openpyxl.style import Style, NumberFormat, Font, Fill, Borders, Protection
 from copy import deepcopy
 
+
 def read_style_table(xml_source):
     """Read styles from the shared style table"""
     table = {}
