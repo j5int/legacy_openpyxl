@@ -62,6 +62,7 @@ Shortcut functions taken from:
 from legacy_openpyxl import __name__ as prefix
 from legacy_openpyxl.shared.compat import OrderedDict
 from legacy_openpyxl.shared.compat.sax import XMLGenerator
+import re
 from xml.sax.xmlreader import AttributesNSImpl
 try:
     from xml.etree.ElementTree import (ElementTree, Element, SubElement, QName,
