@@ -25,6 +25,7 @@
 from numbers import Number
 
 from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.shared.ooxml import CHART_NS, DRAWING_NS, REL_NS
 from legacy_openpyxl.shared.compat.itertools import iteritems
 from legacy_openpyxl.chart import Chart, ErrorBar
 
@@ -35,9 +36,6 @@ except NameError:
     # Python 3
     basestring = str
 
-CHART_NS = "http://schemas.openxmlformats.org/drawingml/2006/chart"
-DRAWING_NS = "http://schemas.openxmlformats.org/drawingml/2006/main"
-REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 
 def safe_string(value):
     """Safely and consistently format numeric values"""
