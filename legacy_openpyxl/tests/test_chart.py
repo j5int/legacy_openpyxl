@@ -281,8 +281,8 @@ class TestChart(object):
         from legacy_openpyxl.chart import Axis, Legend
         from legacy_openpyxl.drawing import Drawing
         c = Chart()
-        eq_(c.type, None)
-        eq_(c.grouping, "standard")
+        eq_(c.TYPE, None)
+        eq_(c.GROUPING, "standard")
         assert_true(isinstance(c.x_axis, Axis))
         assert_true(isinstance(c.y_axis, Axis))
         assert_true(isinstance(c.legend, Legend))
@@ -376,7 +376,7 @@ class TestLineChart(object):
     def test_ctor(self):
         from legacy_openpyxl.chart import LineChart
         c = LineChart()
-        eq_(c.type, "lineChart")
+        eq_(c.TYPE, "lineChart")
 
 
 class TestChartWriter(object):
