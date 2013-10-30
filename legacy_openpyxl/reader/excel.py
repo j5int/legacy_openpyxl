@@ -27,6 +27,12 @@
 
 # Python stdlib imports
 from zipfile import ZipFile, ZIP_DEFLATED, BadZipfile
+from sys import exc_info
+import warnings
+
+# compatibility imports
+
+from legacy_openpyxl.shared.compat import file
 
 # package imports
 from legacy_openpyxl.shared.exc import OpenModeError, InvalidFileException
@@ -43,8 +49,7 @@ from legacy_openpyxl.reader.workbook import (read_sheets_titles, read_named_rang
 from legacy_openpyxl.reader.worksheet import read_worksheet
 from legacy_openpyxl.reader.iter_worksheet import unpack_worksheet
 # Use exc_info for Python 2 compatibility with "except Exception[,/ as] e"
-from sys import exc_info
-import warnings
+
 
 VALID_WORKSHEET = "application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"
 VALID_CHARTSHEET = "application/vnd.openxmlformats-officedocument.spreadsheetml.chartsheet+xml"
@@ -98,13 +103,7 @@ def load_workbook(filename, use_iterators=False, keep_vba=False, guess_types=Tru
 
     """
 
-    try:
-        # Python 2
-        is_file_instance = isinstance(filename, file)
-    except NameError:
-        # Python 3
-        from io import BufferedReader
-        is_file_instance = isinstance(filename, BufferedReader)
+    is_file_instance = isinstance(filename, file)
 
     if is_file_instance:
         # fileobject must have been opened with 'rb' flag
