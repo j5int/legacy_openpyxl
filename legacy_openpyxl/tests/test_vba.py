@@ -26,7 +26,9 @@
 # Python stdlib imports
 import os.path
 import zipfile
-import StringIO
+
+# compatibility imports
+from legacy_openpyxl.shared.compat import StringIO
 
 # package imports
 from legacy_openpyxl.tests.helper import DATADIR
