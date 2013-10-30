@@ -30,12 +30,9 @@ try:
     from legacy_openpyxl.shared.compat import iterparse
 except ImportError:
     from xml.etree.ElementTree import iterparse
-try:
-    # Python 2
-    from StringIO import StringIO
-except ImportError:
-    # Python 3
-    from io import BytesIO, StringIO
+
+# compatibility imports
+from legacy_openpyxl.shared.compat import BytesIO, StringIO
 
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.shared.xmltools import fromstring, QName
