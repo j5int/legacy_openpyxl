@@ -36,7 +36,7 @@ __docformat__ = "restructuredtext en"
 # Python stdlib imports
 from legacy_openpyxl.shared import (NUMERIC_TYPES, DEFAULT_ROW_HEIGHT,
     DEFAULT_COLUMN_WIDTH)
-from legacy_openpyxl.shared.compat import all, unicode, basestring
+from legacy_openpyxl.shared.compat import unicode, basestring
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.shared.exc import (CellCoordinatesException,
     ColumnStringIndexException, DataTypeException)
