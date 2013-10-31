@@ -30,6 +30,9 @@ from datetime import datetime, date
 # 3rd party imports
 from nose.tools import eq_, raises
 
+# compatibility imports
+from legacy_openpyxl.shared.compat import BytesIO, StringIO, unicode
+
 # package imports
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.worksheet import Worksheet
@@ -201,7 +204,6 @@ class TestReadBaseDateFormat(object):
 
 def test_repair_central_directory():
     from legacy_openpyxl.reader.excel import repair_central_directory, CENTRAL_DIRECTORY_SIGNATURE
-    from StringIO import StringIO
 
     data_a = "foobarbaz" + CENTRAL_DIRECTORY_SIGNATURE
     data_b = "bazbarfoo1234567890123456890"
