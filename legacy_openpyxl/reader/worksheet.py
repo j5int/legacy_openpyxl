@@ -26,13 +26,10 @@
 """Reader for a single worksheet."""
 
 # Python stdlib imports
-try:
-    from legacy_openpyxl.shared.compat import iterparse
-except ImportError:
-    from xml.etree.ElementTree import iterparse
 
 # compatibility imports
 from legacy_openpyxl.shared.compat import BytesIO, StringIO
+from legacy_openpyxl.shared.compat import iterparse
 
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.shared.xmltools import fromstring, QName
