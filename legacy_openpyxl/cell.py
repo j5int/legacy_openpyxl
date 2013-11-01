@@ -34,6 +34,9 @@ cells using Excel's 'A1' column/row nomenclature are also provided.
 __docformat__ = "restructuredtext en"
 
 # Python stdlib imports
+import datetime
+import re
+
 from legacy_openpyxl.shared import (NUMERIC_TYPES, DEFAULT_ROW_HEIGHT,
     DEFAULT_COLUMN_WIDTH)
 from legacy_openpyxl.shared.compat import unicode, basestring
@@ -42,8 +45,7 @@ from legacy_openpyxl.shared.exc import (CellCoordinatesException,
     ColumnStringIndexException, DataTypeException)
 from legacy_openpyxl.shared.units import points_to_pixels
 from legacy_openpyxl.style import NumberFormat
-import datetime
-import re
+
 
 # package imports
 
