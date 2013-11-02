@@ -27,7 +27,7 @@ from datetime import date
 
 from nose.tools import eq_, assert_raises, assert_true, assert_false
 
-from legacy_openpyxl.tests.helper import get_xml, assert_equals_string, compare_xml
+from legacy_openpyxl.tests.helper import get_xml, compare_xml
 from legacy_openpyxl.shared.xmltools import Element
 from legacy_openpyxl.writer.charts import ChartWriter
 from legacy_openpyxl.workbook import Workbook
