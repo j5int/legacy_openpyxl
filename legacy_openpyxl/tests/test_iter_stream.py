@@ -1,7 +1,7 @@
 # file legacy_openpyxl/tests/test_iter_stream.py
 
 # Copyright (c) 2011 legacy_openpyxl
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -24,7 +24,7 @@
 # @author: see AUTHORS file
 
 from nose.tools import eq_, raises, assert_raises
-import os.path as osp
+import os.path
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.reader.iter_worksheet import get_range_boundaries
 from legacy_openpyxl.reader.excel import load_workbook
@@ -32,7 +32,7 @@ import legacy_openpyxl.tests.test_iter as test_iter
 import datetime
 
 class StreamTestWorksheet(object):
-    workbook_name = osp.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
+    workbook_name = os.path.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
 
     def _open_wb(self):
         ff = open(self.workbook_name, 'rb')
@@ -49,11 +49,11 @@ class TestText(StreamTestWorksheet, test_iter.TestText):
         pass
 
 class TestIntegers(StreamTestWorksheet, test_iter.TestIntegers):
-    workbook_name = osp.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
+    workbook_name = os.path.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
 
 class TestFloats(StreamTestWorksheet, test_iter.TestFloats):
-    workbook_name = osp.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
+    workbook_name = os.path.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
 
 class TestDates(StreamTestWorksheet, test_iter.TestDates):
-    workbook_name = osp.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
+    workbook_name = os.path.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
 
