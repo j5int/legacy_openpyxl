@@ -24,7 +24,11 @@ from tempfile import NamedTemporaryFile
 
 try:
     from lxml.etree import iterparse
+    LXML = True
 except ImportError:
+    LXML = False
+
+if LXML is False:
     from legacy_openpyxl.shared.compat.elementtree import iterparse
 from legacy_openpyxl.shared.compat.strings import basestring, unicode, StringIO, file, BytesIO
 from legacy_openpyxl.shared.compat.numbers import long
