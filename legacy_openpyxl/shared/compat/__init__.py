@@ -22,7 +22,10 @@
 # @author: see AUTHORS file
 from tempfile import NamedTemporaryFile
 
-from legacy_openpyxl.shared.compat.elementtree import iterparse
+try:
+    from lxml.etree import iterparse
+except ImportError:
+    from legacy_openpyxl.shared.compat.elementtree import iterparse
 from legacy_openpyxl.shared.compat.strings import basestring, unicode, StringIO, file, BytesIO
 from legacy_openpyxl.shared.compat.numbers import long
 from legacy_openpyxl.shared.compat.itertools import xrange, ifilter, iteritems
