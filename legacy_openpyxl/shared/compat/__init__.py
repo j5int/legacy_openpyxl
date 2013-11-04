@@ -22,14 +22,14 @@
 # @author: see AUTHORS file
 from tempfile import NamedTemporaryFile
 
-try:
+from legacy_openpyxl import LXML
+
+if LXML is True:
     from lxml.etree import iterparse
     LXML = True
-except ImportError:
-    LXML = False
-
-if LXML is False:
+else:
     from legacy_openpyxl.shared.compat.elementtree import iterparse
+
 from legacy_openpyxl.shared.compat.strings import basestring, unicode, StringIO, file, BytesIO
 from legacy_openpyxl.shared.compat.numbers import long
 from legacy_openpyxl.shared.compat.itertools import xrange, ifilter, iteritems
