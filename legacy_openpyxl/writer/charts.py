@@ -26,15 +26,8 @@ from numbers import Number
 
 from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
 from legacy_openpyxl.shared.ooxml import CHART_NS, DRAWING_NS, REL_NS
-from legacy_openpyxl.shared.compat.itertools import iteritems
+from legacy_openpyxl.shared.compat import iteritems, basestring
 from legacy_openpyxl.chart import Chart, ErrorBar, BarChart, LineChart, PieChart, ScatterChart, GraphChart
-
-try:
-    # Python 2
-    basestring
-except NameError:
-    # Python 3
-    basestring = str
 
 
 def safe_string(value):
