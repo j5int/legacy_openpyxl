@@ -28,6 +28,7 @@
 # package imports
 from legacy_openpyxl.shared.xmltools import Element, SubElement
 from legacy_openpyxl.shared.xmltools import get_document_content
+from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
 from legacy_openpyxl import style
 
 class StyleWriter(object):
@@ -249,7 +250,7 @@ class StyleWriter(object):
 
                     if st.alignment.indent > 0:
                         alignments['indent'] = '%s' % st.alignment.indent
-                    
+
                     if st.alignment.text_rotation > 0:
                         alignments['textRotation'] = '%s' % st.alignment.text_rotation
                     elif st.alignment.text_rotation < 0:
