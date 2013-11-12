@@ -24,6 +24,14 @@
 # @author: see AUTHORS file
 
 from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.shared.ooxml import (
+    SHEET_MAIN_NS,
+    DRAWING_NS,
+    SHEET_DRAWING_NS,
+    CHART_NS,
+    REL_NS,
+    CHART_DRAWING_NS
+)
 
 
 class DrawingWriter(object):
