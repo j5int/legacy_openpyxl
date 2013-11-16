@@ -31,7 +31,7 @@ else:
 
 from legacy_openpyxl.shared.compat.strings import basestring, unicode, StringIO, file, BytesIO, tempfile
 from legacy_openpyxl.shared.compat.numbers import long
-from legacy_openpyxl.shared.compat.itertools import xrange, ifilter, iteritems
+from legacy_openpyxl.shared.compat.itertools import xrange, ifilter, iteritems, iterkeys
 
 # Python 2.6
 try:
