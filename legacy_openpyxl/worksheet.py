@@ -32,11 +32,17 @@ import re
 
 # package imports
 import legacy_openpyxl.cell
-from legacy_openpyxl.cell import coordinate_from_string, \
-    column_index_from_string, get_column_letter
-from legacy_openpyxl.shared.exc import SheetTitleException, \
-    InsufficientCoordinatesException, CellCoordinatesException, \
+from legacy_openpyxl.cell import (
+    coordinate_from_string,
+    column_index_from_string,
+    get_column_letter
+    )
+from legacy_openpyxl.shared.exc import (
+    SheetTitleException,
+    InsufficientCoordinatesException,
+    CellCoordinatesException,
     NamedRangeException
+    )
 from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.styles import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
