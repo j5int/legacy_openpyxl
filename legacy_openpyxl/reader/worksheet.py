@@ -35,9 +35,10 @@ from legacy_openpyxl.shared.compat import iterparse
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.shared.xmltools import fromstring
 from legacy_openpyxl.cell import Cell, coordinate_from_string
-from legacy_openpyxl.worksheet import Worksheet, ColumnDimension, RowDimension,  ConditionalFormatting
+from legacy_openpyxl.worksheet import Worksheet, ColumnDimension, RowDimension
 from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
 from legacy_openpyxl.style import Color
+from legacy_openpyxl.styles.formatting import ConditionalFormatting
 
 def _get_xml_iter(xml_source):
 
