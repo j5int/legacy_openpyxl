@@ -76,6 +76,13 @@ def ErrorBar():
     from legacy_openpyxl.chart import ErrorBar
     return ErrorBar
 
+
+@pytest.fixture
+def Image():
+    from legacy_openpyxl.drawing import Image
+    return Image
+
+
 # utility fixtures
 
 @pytest.fixture
