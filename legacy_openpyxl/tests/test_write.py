@@ -26,12 +26,14 @@
 # stdlib imports
 import decimal
 import os.path
+import zipfile
 
 # compatibility imports
 from legacy_openpyxl.shared.compat import BytesIO, StringIO
 
 # 3rd party imports
 from nose.tools import eq_, with_setup, raises
+import pytest
 
 # package imports
 from legacy_openpyxl.tests.helper import (
@@ -49,15 +51,6 @@ from legacy_openpyxl.writer.workbook import write_workbook, write_workbook_rels
 from legacy_openpyxl.writer.worksheet import write_worksheet, write_worksheet_rels
 from legacy_openpyxl.writer.strings import write_string_table
 from legacy_openpyxl.writer.styles import StyleWriter
-try:
-    from PIL import Image
-except ImportError:
-    Image = False
-
-import pytest
-pil_required = pytest.mark.skipif("Image is False", reason="PIL must be installed")
-
-import zipfile
 
 
 @with_setup(setup = make_tmpdir, teardown = clean_tmpdir)
@@ -299,26 +292,23 @@ def test_short_number():
         diff = compare_xml(content, expected.read())
         assert diff is None, diff
 
-class TestExcelWriter(object):
 
-    def setup(self):
-        wb = Workbook()
-        self.ew = ExcelWriter(workbook=wb)
+@pytest.mark.pil_required
+def test_write_images():
+    wb = Workbook()
+    ew = ExcelWriter(workbook=wb)
+    from legacy_openpyxl.drawing import Image
+    imagepath = os.path.join(DATADIR, "plain.png")
+    img = Image(imagepath)
 
-    @pil_required
-    def test_write_images(self):
-        from legacy_openpyxl.drawing import Image
-        imagepath = os.path.join(DATADIR, "plain.png")
-        img = Image(imagepath)
+    buf = BytesIO()
 
-        buf = BytesIO()
+    archive = zipfile.ZipFile(buf, 'w')
+    ew._write_images([img], archive, 1)
+    archive.close()
 
-        archive = zipfile.ZipFile(buf, 'w')
-        self.ew._write_images([img], archive, 1)
-        archive.close()
-
-        buf.seek(0)
-        archive = zipfile.ZipFile(buf, 'r')
-        zipinfo = archive.infolist()
-        assert len(zipinfo) == 1
-        assert zipinfo[0].filename == 'xl/media/image1.png'
+    buf.seek(0)
+    archive = zipfile.ZipFile(buf, 'r')
+    zipinfo = archive.infolist()
+    assert len(zipinfo) == 1
+    assert zipinfo[0].filename == 'xl/media/image1.png'
