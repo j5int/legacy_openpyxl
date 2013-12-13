@@ -45,7 +45,7 @@ from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.writer.drawings import DrawingWriter, ShapeWriter
 from legacy_openpyxl.writer.charts import ChartWriter
 from legacy_openpyxl.writer.worksheet import write_worksheet, write_worksheet_rels
-from legacy_openpyxl.writer.comments import write_comments
+from legacy_openpyxl.writer.comments import CommentWriter
 
 
 class ExcelWriter(object):
@@ -138,8 +138,11 @@ class ExcelWriter(object):
                     archive.writestr(PACKAGE_IMAGES + '/image%d.png' % image_id, buf.getvalue())
                     image_id += 1
             if sheet._comment_count > 0:
+                cw = CommentWriter(sheet)
                 archive.writestr(PACKAGE_XL + '/comments%d.xml' % comments_id,
-                    write_comments(sheet))
+                    cw.write_comments())
+                archive.writestr(PACKAGE_XL + '/drawings/commentsDrawing%d.vml' % comments_id,
+                    cw.write_comments_vml())
                 comments_id += 1
 
     def save(self, filename):
