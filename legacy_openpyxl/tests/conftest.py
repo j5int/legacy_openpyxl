@@ -17,6 +17,14 @@ def Workbook():
     from legacy_openpyxl import Workbook
     return Workbook
 
+
+@pytest.fixture
+def Worksheet():
+    """Worksheet Class"""
+    from legacy_openpyxl.worksheet import Worksheet
+    return Worksheet
+
+
 # Charts
 
 @pytest.fixture
