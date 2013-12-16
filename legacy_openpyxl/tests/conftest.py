@@ -76,10 +76,10 @@ def Reference():
 
 
 @pytest.fixture
-def Serie():
+def Series():
     """Serie class"""
-    from legacy_openpyxl.chart import Serie
-    return Serie
+    from legacy_openpyxl.chart import Series
+    return Series
 
 
 @pytest.fixture
