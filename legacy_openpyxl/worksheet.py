@@ -1,8 +1,5 @@
 # file legacy_openpyxl/worksheet.py
-from legacy_openpyxl.shared.units import points_to_pixels
-from legacy_openpyxl.shared import DEFAULT_COLUMN_WIDTH, DEFAULT_ROW_HEIGHT
-
-# Copyright (c) 2010-2011 legacy_openpyxl
+# Copyright (c) 2010-2013 legacy_openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -43,6 +40,8 @@ from legacy_openpyxl.shared.exc import (
     CellCoordinatesException,
     NamedRangeException
     )
+from legacy_openpyxl.shared.units import points_to_pixels
+from legacy_openpyxl.shared import DEFAULT_COLUMN_WIDTH, DEFAULT_ROW_HEIGHT
 from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.styles import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
