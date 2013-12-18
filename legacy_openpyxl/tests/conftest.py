@@ -104,6 +104,15 @@ def Image():
     return Image
 
 
+# Styles
+
+@pytest.fixture(autouse=True)
+def Rule():
+    """Formatting rule class"""
+    from legacy_openpyxl.styles.formatting import Rule
+    return Rule
+
+
 # utility fixtures
 
 @pytest.fixture
