@@ -40,6 +40,7 @@ from legacy_openpyxl import worksheet
 from legacy_openpyxl import reader
 from legacy_openpyxl import shared
 from legacy_openpyxl import writer
+from legacy_openpyxl import comments
 
 # shortcuts
 from legacy_openpyxl.workbook import Workbook
