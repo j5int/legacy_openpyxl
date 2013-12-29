@@ -39,7 +39,7 @@ from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.style import NumberFormat, Border, Color, Font
 
 # test imports
-from legacy_openpyxl.tests.helper import DATADIR, get_xml, compare_xml, canon_repr
+from legacy_openpyxl.tests.helper import DATADIR, get_xml, compare_xml
 
 
 class TestCreateStyle(object):
