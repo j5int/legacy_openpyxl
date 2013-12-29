@@ -47,7 +47,6 @@ from legacy_openpyxl.reader.workbook import (read_sheets_titles, read_named_rang
         read_properties_core, read_excel_base_date, get_sheet_ids,
         read_content_types)
 from legacy_openpyxl.reader.worksheet import read_worksheet
-from legacy_openpyxl.reader.iter_worksheet import unpack_worksheet
 from legacy_openpyxl.reader.comments import read_comments, get_comments_file
 # Use exc_info for Python 2 compatibility with "except Exception[,/ as] e"
 
