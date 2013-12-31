@@ -1,6 +1,4 @@
-# file openpyxl/__init__.py
-
-# Copyright (c) 2010-2011 openpyxl
+# Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -40,6 +38,7 @@ from legacy_openpyxl import worksheet
 from legacy_openpyxl import reader
 from legacy_openpyxl import shared
 from legacy_openpyxl import writer
+from legacy_openpyxl import comments
 
 # shortcuts
 from legacy_openpyxl.workbook import Workbook

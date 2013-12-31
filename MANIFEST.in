@@ -1,5 +1,5 @@
 prune legacy_openpyxl/tests
-prunt legacy_openpyxl/sample
+prune legacy_openpyxl/sample
 include LICENCE
 include AUTHORS
 include README
