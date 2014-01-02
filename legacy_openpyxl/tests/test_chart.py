@@ -1,3 +1,5 @@
+# file openpyxl/tests/test_chart.py
+
 from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
@@ -35,7 +37,7 @@ import pytest
                          ]
                          )
 def test_less_than_one(value, result):
-    from legacy_openpyxl.chart import less_than_one
+    from legacy_openpyxl.charts.axis import less_than_one
     assert less_than_one(value) == result
 
 def test_axis_ctor(Axis):
@@ -231,7 +233,7 @@ def series(cell_range, Series):
 class TestChart(object):
 
     def test_ctor(self, Chart):
-        from legacy_openpyxl.chart import Legend
+        from legacy_openpyxl.charts import Legend
         from legacy_openpyxl.drawing import Drawing
         c = Chart()
         assert c.TYPE == None
