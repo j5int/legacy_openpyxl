@@ -45,7 +45,6 @@ from legacy_openpyxl.shared import DEFAULT_COLUMN_WIDTH, DEFAULT_ROW_HEIGHT
 from legacy_openpyxl.shared.password_hasher import hash_password
 from legacy_openpyxl.styles import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
-from legacy_openpyxl.drawing import Drawing
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
 from legacy_openpyxl.shared.compat import OrderedDict, unicode, xrange, basestring
 from legacy_openpyxl.shared.compat.itertools import iteritems

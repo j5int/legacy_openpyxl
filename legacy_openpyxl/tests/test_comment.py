@@ -21,12 +21,9 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-import pytest
-
 from legacy_openpyxl.comments import Comment
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.worksheet import Worksheet
-from legacy_openpyxl.cell import Cell
 
 def test_init():
     wb = Workbook()

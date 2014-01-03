@@ -27,15 +27,13 @@ import os.path
 import zipfile
 
 # compatibility imports
-from legacy_openpyxl.shared.compat import BytesIO, StringIO
+from legacy_openpyxl.shared.compat import BytesIO
 
 import pytest
 
 # package imports
 from legacy_openpyxl.tests.helper import (
     DATADIR,
-    clean_tmpdir,
-    make_tmpdir,
     compare_xml,
     )
 from legacy_openpyxl.workbook import Workbook

@@ -40,12 +40,12 @@ from legacy_openpyxl.shared import (NUMERIC_TYPES, DEFAULT_ROW_HEIGHT,
     DEFAULT_COLUMN_WIDTH)
 from legacy_openpyxl.shared.compat import unicode, basestring
 from legacy_openpyxl.shared.date_time import SharedDate
-from legacy_openpyxl.shared.exc import (CellCoordinatesException,
-    ColumnStringIndexException, DataTypeException)
+from legacy_openpyxl.shared.exc import (
+    CellCoordinatesException,
+    DataTypeException
+)
 from legacy_openpyxl.shared.units import points_to_pixels
 from legacy_openpyxl.style import NumberFormat
-from legacy_openpyxl.comments import Comment
-
 
 # package imports
 

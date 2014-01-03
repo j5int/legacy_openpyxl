@@ -28,7 +28,7 @@ from __future__ import absolute_import
 from zipfile import ZipFile, ZIP_DEFLATED
 
 # compatibility imports
-from legacy_openpyxl.shared.compat import BytesIO, StringIO
+from legacy_openpyxl.shared.compat import BytesIO
 
 # package imports
 from legacy_openpyxl.shared.ooxml import (
