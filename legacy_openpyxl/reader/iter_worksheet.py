@@ -48,7 +48,6 @@ from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
 from legacy_openpyxl.shared.compat import unicode
 from legacy_openpyxl.shared.ooxml import (
-    PACKAGE_WORKSHEETS,
     ARC_STYLE,
     SHEET_MAIN_NS
 )
