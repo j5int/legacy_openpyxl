@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +28,6 @@ __docformat__ = "restructuredtext en"
 
 # Python stdlib imports
 import datetime
-import os
 import threading
 
 # package imports
@@ -38,9 +38,9 @@ from legacy_openpyxl.namedrange import NamedRange
 from legacy_openpyxl.style import Style
 from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
-from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900, CALENDAR_MAC_1904
+from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900
 from legacy_openpyxl.shared.xmltools import fromstring
-from legacy_openpyxl.shared.ooxml import NAMESPACES, SHEET_MAIN_NS
+from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
 
 
 class DocumentProperties(object):

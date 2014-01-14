@@ -1,5 +1,4 @@
 # Fixtures (pre-configured objects) for tests
-import sys
 import pytest
 
 # objects under test
@@ -30,70 +29,70 @@ def Worksheet():
 @pytest.fixture
 def Chart():
     """Chart class"""
-    from legacy_openpyxl.chart import Chart
+    from legacy_openpyxl.charts.chart import Chart
     return Chart
 
 
 @pytest.fixture
 def GraphChart():
     """GraphicChart class"""
-    from legacy_openpyxl.chart import GraphChart
+    from legacy_openpyxl.charts.chart import GraphChart
     return GraphChart
 
 
 @pytest.fixture
 def Axis():
     """Axis class"""
-    from legacy_openpyxl.chart import Axis
+    from legacy_openpyxl.charts.axis import Axis
     return Axis
 
 
 @pytest.fixture
 def PieChart():
     """PieChart class"""
-    from legacy_openpyxl.chart import PieChart
+    from legacy_openpyxl.charts import PieChart
     return PieChart
 
 
 @pytest.fixture
 def LineChart():
     """LineChart class"""
-    from legacy_openpyxl.chart import LineChart
+    from legacy_openpyxl.charts import LineChart
     return LineChart
 
 
 @pytest.fixture
 def BarChart():
     """BarChart class"""
-    from legacy_openpyxl.chart import BarChart
+    from legacy_openpyxl.charts import BarChart
     return BarChart
 
 
 @pytest.fixture
 def ScatterChart():
     """ScatterChart class"""
-    from legacy_openpyxl.chart import ScatterChart
+    from legacy_openpyxl.charts import ScatterChart
     return ScatterChart
 
 
 @pytest.fixture
 def Reference():
     """Reference class"""
-    from legacy_openpyxl.chart import Reference
+    from legacy_openpyxl.charts import Reference
     return Reference
 
 
 @pytest.fixture
 def Series():
     """Serie class"""
-    from legacy_openpyxl.chart import Series
+    from legacy_openpyxl.charts import Series
     return Series
 
 
 @pytest.fixture
 def ErrorBar():
     """ErrorBar class"""
-    from legacy_openpyxl.chart import ErrorBar
+    from legacy_openpyxl.charts import ErrorBar
     return ErrorBar
 
 
@@ -160,3 +159,5 @@ def pytest_runtest_setup(item):
             pytest.skip("PIL is installed")
         elif item.get_marker("not_py33"):
             pytest.skip("Ordering is not a given in Python 3")
+        elif item.get_marker("lxml_required"):
+            pytest.skip("LXML is required for some features such as schema validation")

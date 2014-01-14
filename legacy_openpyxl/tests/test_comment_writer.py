@@ -21,8 +21,6 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-import pytest
-
 import os
 
 from legacy_openpyxl.workbook import Workbook
@@ -32,7 +30,7 @@ from legacy_openpyxl.comments import Comment
 from legacy_openpyxl.tests.helper import DATADIR, compare_xml
 from legacy_openpyxl.shared.xmltools import fromstring, get_document_content
 from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
-from legacy_openpyxl.writer.comments import vmlns, excelns, officens
+from legacy_openpyxl.writer.comments import vmlns, excelns
 
 def _create_ws():
     wb = Workbook()

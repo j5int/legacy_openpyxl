@@ -26,7 +26,7 @@ import os.path
 from xml.sax.saxutils import XMLGenerator
 
 # compatibility imports
-from legacy_openpyxl.shared.compat import BytesIO, StringIO
+from legacy_openpyxl.shared.compat import StringIO
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
 from legacy_openpyxl.shared.compat import iterkeys
 

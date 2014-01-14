@@ -21,15 +21,12 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-import pytest
 
 from zipfile import ZipFile, ZIP_DEFLATED
 import os.path
-from collections import namedtuple
 
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.worksheet import Worksheet
-from legacy_openpyxl.comments import Comment
 from legacy_openpyxl.reader import comments
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.shared.xmltools import fromstring
