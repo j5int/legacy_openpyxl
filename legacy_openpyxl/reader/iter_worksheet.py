@@ -36,8 +36,11 @@ import zipfile
 import struct
 from collections import namedtuple
 
+
 # compatibility
-from legacy_openpyxl.shared.compat import iterparse, xrange
+from legacy_openpyxl.shared.compat import xrange
+from legacy_openpyxl.shared.xmltools import iterparse
+
 
 # package
 from legacy_openpyxl.worksheet import Worksheet
