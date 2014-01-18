@@ -33,7 +33,7 @@ from legacy_openpyxl.compat import OrderedDict
 from legacy_openpyxl.cell import  get_column_letter, Cell
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.xml.xmltools import (XMLGenerator, start_tag, end_tag, tag)
-from legacy_openpyxl.shared.date_time import SharedDate
+from legacy_openpyxl.date_time import SharedDate
 from legacy_openpyxl.xml.ooxml import MAX_COLUMN, MAX_ROW
 from legacy_openpyxl.units import NUMERIC_TYPES
 from legacy_openpyxl.exceptions import WorkbookAlreadySaved

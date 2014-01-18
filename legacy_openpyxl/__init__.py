@@ -33,15 +33,13 @@ except ImportError:
     LXML = False
 
 # package imports
-from legacy_openpyxl import cell
-from legacy_openpyxl import namedrange
-from legacy_openpyxl import style
-from legacy_openpyxl import workbook
-from legacy_openpyxl import worksheet
-from legacy_openpyxl import reader
-from legacy_openpyxl import shared
-from legacy_openpyxl import writer
-from legacy_openpyxl import comments
+#from openpyxl import cell
+#from openpyxl import namedrange
+#from openpyxl import workbook
+#from openpyxl import worksheet
+#from openpyxl import reader
+#from openpyxl import writer
+#from openpyxl import comments
 
 # shortcuts
 from legacy_openpyxl.workbook import Workbook

@@ -34,7 +34,7 @@ from legacy_openpyxl.exceptions import (
     CellCoordinatesException,
     DataTypeException
     )
-from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900
+from legacy_openpyxl.date_time import CALENDAR_WINDOWS_1900
 from legacy_openpyxl.cell import (
     column_index_from_string,
     coordinate_from_string,

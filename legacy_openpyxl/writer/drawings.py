@@ -33,7 +33,7 @@ from legacy_openpyxl.xml.ooxml import (
     CHART_DRAWING_NS,
     PKG_REL_NS
 )
-from legacy_openpyxl.shared.compat.strings import safe_string
+from legacy_openpyxl.compat.strings import safe_string
 
 
 class DrawingWriter(object):

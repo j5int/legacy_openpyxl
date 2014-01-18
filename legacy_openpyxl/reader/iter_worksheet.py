@@ -47,7 +47,7 @@ from legacy_openpyxl.cell import (
 )
 from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.styles import is_date_format
-from legacy_openpyxl.shared.date_time import SharedDate
+from legacy_openpyxl.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
 from legacy_openpyxl.compat import unicode
 from legacy_openpyxl.xml.ooxml import (

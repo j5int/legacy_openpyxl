@@ -50,7 +50,7 @@ from legacy_openpyxl.xml.ooxml import (
     COMMENTS_NS,
     VML_NS
 )
-from legacy_openpyxl.shared.compat.itertools import iteritems, iterkeys
+from legacy_openpyxl.compat.itertools import iteritems, iterkeys
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
 
 

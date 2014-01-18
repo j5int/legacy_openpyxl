@@ -42,13 +42,13 @@ from legacy_openpyxl.units import (
     DEFAULT_COLUMN_WIDTH
 )
 from legacy_openpyxl.compat import unicode, basestring
-from legacy_openpyxl.shared.date_time import SharedDate
+from legacy_openpyxl.date_time import SharedDate
 from legacy_openpyxl.exceptions import (
     CellCoordinatesException,
     DataTypeException,
     IllegalCharacterError
 )
-from legacy_openpyxl.shared.units import points_to_pixels
+from legacy_openpyxl.units import points_to_pixels
 from legacy_openpyxl.styles import NumberFormat
 
 # package imports

@@ -53,7 +53,7 @@ from legacy_openpyxl.xml.ooxml import (
     ARC_ROOT_RELS
 )
 from legacy_openpyxl.xml.xmltools import get_document_content, fromstring
-from legacy_openpyxl.shared.date_time import datetime_to_W3CDTF
+from legacy_openpyxl.date_time import datetime_to_W3CDTF
 from legacy_openpyxl.namedrange import NamedRange, NamedRangeContainingValue
 
 
