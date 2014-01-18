@@ -28,8 +28,8 @@ from __future__ import absolute_import
 import re
 
 # package imports
-from legacy_openpyxl.shared.compat import unicode
-from legacy_openpyxl.shared.exc import NamedRangeException
+from legacy_openpyxl.compat import unicode
+from legacy_openpyxl.exceptions import NamedRangeException
 
 # constants
 NAMED_RANGE_RE = re.compile("^(('(?P<quoted>([^']|'')*)')|(?P<notquoted>[^']*))!(?P<range>(\$([A-Za-z]+))?(\$([0-9]+))?(:(\$([A-Za-z]+))?(\$([0-9]+))?)?)")

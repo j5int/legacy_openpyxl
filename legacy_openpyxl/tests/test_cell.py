@@ -30,7 +30,7 @@ import pytest
 # package imports
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.workbook import Workbook
-from legacy_openpyxl.shared.exc import (
+from legacy_openpyxl.exceptions import (
     CellCoordinatesException,
     DataTypeException
     )
@@ -220,7 +220,7 @@ def test_set_bad_type():
 
 
 def test_illegal_chacters():
-    from legacy_openpyxl.shared.exc import IllegalCharacterError
+    from legacy_openpyxl.exceptions import IllegalCharacterError
     ws = build_dummy_worksheet()
     cell = Cell(ws, 'A', 1)
     for i in range(31):

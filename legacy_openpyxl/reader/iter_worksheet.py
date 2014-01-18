@@ -34,8 +34,8 @@ from collections import namedtuple
 
 
 # compatibility
-from legacy_openpyxl.shared.compat import xrange
-from legacy_openpyxl.shared.xmltools import iterparse
+from legacy_openpyxl.compat import xrange
+from legacy_openpyxl.xml.xmltools import iterparse
 
 
 # package
@@ -49,8 +49,8 @@ from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.styles import is_date_format
 from legacy_openpyxl.shared.date_time import SharedDate
 from legacy_openpyxl.reader.worksheet import read_dimension
-from legacy_openpyxl.shared.compat import unicode
-from legacy_openpyxl.shared.ooxml import (
+from legacy_openpyxl.compat import unicode
+from legacy_openpyxl.xml.ooxml import (
     ARC_STYLE,
     SHEET_MAIN_NS
 )

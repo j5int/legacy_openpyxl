@@ -24,6 +24,7 @@ from __future__ import absolute_import
 
 """Worksheet is the 2nd-level container in Excel."""
 
+
 # Python stdlib imports
 import re
 
@@ -34,20 +35,23 @@ from legacy_openpyxl.cell import (
     column_index_from_string,
     get_column_letter
     )
-from legacy_openpyxl.shared.exc import (
+from legacy_openpyxl.exceptions import (
     SheetTitleException,
     InsufficientCoordinatesException,
     CellCoordinatesException,
     NamedRangeException
     )
-from legacy_openpyxl.shared.units import points_to_pixels
-from legacy_openpyxl.shared import DEFAULT_COLUMN_WIDTH, DEFAULT_ROW_HEIGHT
-from legacy_openpyxl.shared.password_hasher import hash_password
+from legacy_openpyxl.units import (
+    points_to_pixels,
+    DEFAULT_COLUMN_WIDTH,
+    DEFAULT_ROW_HEIGHT
+    )
 from legacy_openpyxl.styles import Style, DEFAULTS as DEFAULTS_STYLE
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
-from legacy_openpyxl.shared.compat import OrderedDict, unicode, xrange, basestring
-from legacy_openpyxl.shared.compat.itertools import iteritems
+from legacy_openpyxl.compat import OrderedDict, unicode, xrange, basestring
+from legacy_openpyxl.compat.itertools import iteritems
+from .password_hasher import hash_password
 
 _DEFAULTS_STYLE_HASH = hash(DEFAULTS_STYLE)
 
@@ -58,8 +62,8 @@ def flatten(results):
     for row in results:
         yield(c.value for c in row)
 
-from legacy_openpyxl.shared.ooxml import REL_NS, PKG_REL_NS
-from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.xml.ooxml import REL_NS, PKG_REL_NS
+from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
 
 
 class Relationship(object):

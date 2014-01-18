@@ -27,7 +27,7 @@ from datetime import datetime, date, timedelta
 import pytest
 
 # package imports
-from legacy_openpyxl.shared.compat import safe_string
+from legacy_openpyxl.compat import safe_string
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.cell import Cell

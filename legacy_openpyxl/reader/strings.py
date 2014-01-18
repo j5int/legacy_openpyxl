@@ -25,9 +25,9 @@ from __future__ import absolute_import
 """Read the shared strings table."""
 
 # package imports
-from legacy_openpyxl.shared.xmltools import fromstring
-from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS, XML_NS
-from legacy_openpyxl.shared.compat import unicode
+from legacy_openpyxl.xml.xmltools import fromstring
+from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS, XML_NS
+from legacy_openpyxl.compat import unicode
 
 
 def read_string_table(xml_source):

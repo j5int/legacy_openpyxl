@@ -29,7 +29,7 @@ import datetime
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.namedrange import NamedRange
-from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
+from legacy_openpyxl.exceptions import ReadOnlyWorkbookException
 
 # test imports
 import pytest

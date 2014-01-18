@@ -29,11 +29,11 @@ import decimal
 
 # compatibility imports
 
-from legacy_openpyxl.shared.compat import StringIO, long
+from legacy_openpyxl.compat import StringIO, long
 
 # package imports
 from legacy_openpyxl.cell import coordinate_from_string, column_index_from_string
-from legacy_openpyxl.shared.xmltools import (
+from legacy_openpyxl.xml.xmltools import (
     Element,
     SubElement,
     XMLGenerator,
@@ -43,7 +43,7 @@ from legacy_openpyxl.shared.xmltools import (
     tag,
     fromstring,
     )
-from legacy_openpyxl.shared.ooxml import (
+from legacy_openpyxl.xml.ooxml import (
     SHEET_MAIN_NS,
     PKG_REL_NS,
     REL_NS,

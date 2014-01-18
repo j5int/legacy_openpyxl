@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +24,7 @@
 
 from itertools import groupby
 
-from legacy_openpyxl.shared.compat import OrderedDict
+from legacy_openpyxl.compat import OrderedDict
 from legacy_openpyxl.cell import coordinate_from_string
 
 
