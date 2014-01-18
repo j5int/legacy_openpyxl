@@ -27,7 +27,7 @@ from __future__ import absolute_import
 # package imports
 from legacy_openpyxl.shared.xmltools import fromstring
 from legacy_openpyxl.shared.exc import MissingNumberFormat
-from legacy_openpyxl.style import Style, NumberFormat, Font, Fill, Borders, Protection, Color
+from legacy_openpyxl.styles import Style, NumberFormat, Font, Fill, Borders, Protection, Color
 from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
 from copy import deepcopy
 

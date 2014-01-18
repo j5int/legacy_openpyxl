@@ -31,7 +31,7 @@ from legacy_openpyxl.shared.compat import safe_string
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.cell import Cell
-from legacy_openpyxl.style import NumberFormat
+from legacy_openpyxl.styles import NumberFormat
 from legacy_openpyxl.shared.date_time import SharedDate, CALENDAR_MAC_1904, CALENDAR_WINDOWS_1900
 
 

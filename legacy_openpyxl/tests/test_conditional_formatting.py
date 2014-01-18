@@ -36,7 +36,7 @@ from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.shared.ooxml import ARC_STYLE
 from legacy_openpyxl.writer.worksheet import write_worksheet_conditional_formatting
 from legacy_openpyxl.writer.styles import StyleWriter
-from legacy_openpyxl.style import Border, Color, Fill, Font, Borders, HashableObject
+from legacy_openpyxl.styles import Border, Color, Fill, Font, Borders, HashableObject
 
 # test imports
 import pytest

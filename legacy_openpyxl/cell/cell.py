@@ -46,7 +46,7 @@ from legacy_openpyxl.shared.exc import (
     IllegalCharacterError
 )
 from legacy_openpyxl.shared.units import points_to_pixels
-from legacy_openpyxl.style import NumberFormat
+from legacy_openpyxl.styles import NumberFormat
 
 # package imports
 

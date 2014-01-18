@@ -40,7 +40,7 @@ from legacy_openpyxl.shared.exc import WorkbookAlreadySaved
 from legacy_openpyxl.writer.excel import ExcelWriter
 from legacy_openpyxl.writer.strings import write_string_table
 from legacy_openpyxl.writer.styles import StyleWriter
-from legacy_openpyxl.style import Style, NumberFormat
+from legacy_openpyxl.styles import Style, NumberFormat
 
 from legacy_openpyxl.shared.ooxml import (ARC_SHARED_STRINGS, PACKAGE_WORKSHEETS)
 

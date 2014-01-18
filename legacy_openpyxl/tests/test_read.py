@@ -35,7 +35,7 @@ from legacy_openpyxl.shared.compat import BytesIO, StringIO, unicode, tempfile
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.workbook import Workbook
-from legacy_openpyxl.style import NumberFormat, Style
+from legacy_openpyxl.styles import NumberFormat, Style
 from legacy_openpyxl.reader.worksheet import read_worksheet, read_dimension
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.shared.exc import InvalidFileException

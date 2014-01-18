@@ -35,7 +35,7 @@ from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.writer.dump_worksheet import DumpWorksheet, save_dump
 from legacy_openpyxl.writer.strings import StringTableBuilder
 from legacy_openpyxl.namedrange import NamedRange
-from legacy_openpyxl.style import Style
+from legacy_openpyxl.styles import Style
 from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.shared.exc import ReadOnlyWorkbookException
 from legacy_openpyxl.shared.date_time import CALENDAR_WINDOWS_1900
