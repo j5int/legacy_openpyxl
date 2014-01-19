@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,17 +22,4 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-
-# package imports
-from legacy_openpyxl.worksheet.password_hasher import hash_password
-from legacy_openpyxl.worksheet import SheetProtection
-
-
-def test_hasher():
-    assert 'CBEB' == hash_password('test')
-
-
-def test_sheet_protection():
-    protection = SheetProtection()
-    protection.password = 'test'
-    assert 'CBEB' == protection.password
+"""Collection of XML resources compatible across different Python versions"""

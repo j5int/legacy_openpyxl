@@ -31,8 +31,8 @@ from sys import version_info
 from lxml.doctestcompare import LXMLOutputChecker, PARSE_XML
 
 # package imports
-from legacy_openpyxl.shared.compat import BytesIO
-from legacy_openpyxl.shared.xmltools import ElementTree
+from legacy_openpyxl.compat import BytesIO
+from legacy_openpyxl.xml.xmltools import ElementTree
 
 # constants
 DATADIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'test_data'))

@@ -22,40 +22,70 @@ from __future__ import absolute_import
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-"""Definitions for openpyxl shared exception classes."""
+import decimal
+import math
+
+from legacy_openpyxl.compat import long
+
+#constants
+# values in points
+DEFAULT_ROW_HEIGHT = 15.
+DEFAULT_COLUMN_WIDTH = 51.85
+NUMERIC_TYPES = (int, float, long, decimal.Decimal)
 
 
-class CellCoordinatesException(Exception):
-    """Error for converting between numeric and A1-style cell references."""
+def cm_to_pixels(value):
+    return int(value * 44.6)
 
-class ColumnStringIndexException(Exception):
-    """Error for bad column names in A1-style cell references."""
 
-class DataTypeException(Exception):
-    """Error for any data type inconsistencies."""
+def pixels_to_cm(value):
+    return (1 / cm_to_pixels(value))
 
-class NamedRangeException(Exception):
-    """Error for badly formatted named ranges."""
 
-class SheetTitleException(Exception):
-    """Error for bad sheet names."""
+def pixels_to_EMU(value):
+    return int(round(value * 9525))
 
-class InsufficientCoordinatesException(Exception):
-    """Error for partially specified cell coordinates."""
 
-class OpenModeError(Exception):
-    """Error for fileobj opened in non-binary mode."""
+def EMU_to_pixels(value):
+    if not value:
+        return 0
+    else:
+        return round(value / 9525.)
 
-class InvalidFileException(Exception):
-    """Error for trying to open a non-ooxml file."""
 
-class ReadOnlyWorkbookException(Exception):
-    """Error for trying to modify a read-only workbook"""
+def EMU_to_cm(value):
+    if not value:
+        return 0
+    else:
+        return (EMU_to_pixels(value) * 2.57 / 96)
 
-class MissingNumberFormat(Exception):
-    """Error when a referenced number format is not in the stylesheet"""
 
-class WorkbookAlreadySaved(Exception):
-    """Error when attempting to perform operations on a dump workbook
-    while it has already been dumped once"""
+def pixels_to_points(value):
+    return value * 0.67777777
 
+
+def points_to_pixels(value):
+    if not value:
+        return 0
+    else:
+        return int(math.ceil(value * 1.333333333))
+
+
+def degrees_to_angle(value):
+    return int(round(value * 60000))
+
+
+def angle_to_degrees(value):
+    if not value:
+        return 0
+    else:
+        return round(value / 60000.)
+
+
+def short_color(color):
+    """ format a color to its short size """
+
+    if len(color) > 6:
+        return color[2:]
+    else:
+        return color

@@ -36,23 +36,28 @@ __docformat__ = "restructuredtext en"
 import datetime
 import re
 
-from legacy_openpyxl.shared import (NUMERIC_TYPES, DEFAULT_ROW_HEIGHT,
-    DEFAULT_COLUMN_WIDTH)
-from legacy_openpyxl.shared.compat import unicode, basestring
-from legacy_openpyxl.shared.date_time import SharedDate
-from legacy_openpyxl.shared.exc import (
-    CellCoordinatesException,
-    DataTypeException
+from legacy_openpyxl.units import (
+    NUMERIC_TYPES,
+    DEFAULT_ROW_HEIGHT,
+    DEFAULT_COLUMN_WIDTH
 )
-from legacy_openpyxl.shared.units import points_to_pixels
-from legacy_openpyxl.style import NumberFormat
+from legacy_openpyxl.compat import unicode, basestring
+from legacy_openpyxl.date_time import SharedDate
+from legacy_openpyxl.exceptions import (
+    CellCoordinatesException,
+    DataTypeException,
+    IllegalCharacterError
+)
+from legacy_openpyxl.units import points_to_pixels
+from legacy_openpyxl.styles import NumberFormat
 
 # package imports
 
 # constants
 COORD_RE = re.compile('^[$]?([A-Z]+)[$]?(\d+)$')
-
 ABSOLUTE_RE = re.compile('^[$]?([A-Z]+)[$]?(\d+)(:[$]?([A-Z]+)[$]?(\d+))?$')
+ILLEGAL_CHARACTERS_RE = re.compile('|'.join(chr(x) for x in range(33)))
+
 
 
 def coordinate_from_string(coord_string):
@@ -199,6 +204,8 @@ class Cell(object):
         # string must never be longer than 32,767 characters
         # truncate if necessary
         value = value[:32767]
+        if ILLEGAL_CHARACTERS_RE.match(value):
+            raise IllegalCharacterError
         # we require that newline is represented as "\n" in core,
         # not as "\r\n" or "\r"
         value = value.replace('\r\n', '\n')

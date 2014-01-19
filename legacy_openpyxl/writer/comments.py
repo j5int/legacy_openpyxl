@@ -1,4 +1,3 @@
-# coding=UTF-8
 from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
@@ -23,9 +22,9 @@ from __future__ import absolute_import
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-from legacy_openpyxl.shared.compat import iteritems
-from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
-from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.compat import iteritems
+from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
+from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
 from legacy_openpyxl.cell import column_index_from_string
 
 vmlns="urn:schemas-microsoft-com:vml"

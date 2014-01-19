@@ -34,8 +34,8 @@ from legacy_openpyxl.writer import dump_worksheet
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.writer.strings import StringTableBuilder
-from legacy_openpyxl.shared.compat import xrange
-from legacy_openpyxl.shared.exc import WorkbookAlreadySaved
+from legacy_openpyxl.compat import xrange
+from legacy_openpyxl.exceptions import WorkbookAlreadySaved
 
 
 def _get_test_filename():

@@ -24,8 +24,8 @@ from __future__ import absolute_import
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-from legacy_openpyxl.shared.xmltools import Element, SubElement, get_document_content
-from legacy_openpyxl.shared.ooxml import (
+from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.xml.ooxml import (
     DRAWING_NS,
     SHEET_DRAWING_NS,
     CHART_NS,
@@ -33,7 +33,7 @@ from legacy_openpyxl.shared.ooxml import (
     CHART_DRAWING_NS,
     PKG_REL_NS
 )
-from legacy_openpyxl.shared.compat.strings import safe_string
+from legacy_openpyxl.compat.strings import safe_string
 
 
 class DrawingWriter(object):

@@ -28,7 +28,7 @@ import datetime
 import pytest
 
 # compatibility imports
-from legacy_openpyxl.shared.compat import BytesIO
+from legacy_openpyxl.compat import BytesIO
 
 # package imports
 from legacy_openpyxl.reader.excel import load_workbook
@@ -36,7 +36,7 @@ from legacy_openpyxl.reader.style import read_style_table
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.writer.excel import save_virtual_workbook
 from legacy_openpyxl.writer.styles import StyleWriter
-from legacy_openpyxl.style import NumberFormat, Border, Color, Font
+from legacy_openpyxl.styles import NumberFormat, Border, Color, Font
 
 # test imports
 from legacy_openpyxl.tests.helper import DATADIR, get_xml, compare_xml

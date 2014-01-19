@@ -26,7 +26,7 @@ import threading
 
 from legacy_openpyxl.workbook import Workbook
 
-from legacy_openpyxl.shared.compat import StringIO
+from legacy_openpyxl.compat import StringIO
 
 def test_thread_safe_dump():
 

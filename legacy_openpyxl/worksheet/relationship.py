@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,17 +22,26 @@
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
+from legacy_openpyxl.xml.ooxml import REL_NS, PKG_REL_NS
+from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
 
-# package imports
-from legacy_openpyxl.worksheet.password_hasher import hash_password
-from legacy_openpyxl.worksheet import SheetProtection
+class Relationship(object):
+    """Represents many kinds of relationships."""
+    # TODO: Use this object for workbook relationships as well as
+    # worksheet relationships
 
+    TYPES = ("hyperlink", "drawing", "image")
 
-def test_hasher():
-    assert 'CBEB' == hash_password('test')
+    def __init__(self, rel_type, target=None, target_mode=None, id=None):
+        if rel_type not in self.TYPES:
+            raise ValueError("Invalid relationship type %s" % rel_type)
+        self.type = "%s/%s" % (REL_NS, rel_type)
+        self.target = target
+        self.target_mode = target_mode
+        self.id = id
 
+    def __repr__(self):
+        root = Element("{%s}Relationships" % PKG_REL_NS)
+        body = SubElement(root, "{%s}Relationship" % PKG_REL_NS, self.__dict__)
+        return get_document_content(root)
 
-def test_sheet_protection():
-    protection = SheetProtection()
-    protection.password = 'test'
-    assert 'CBEB' == protection.password
