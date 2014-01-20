@@ -23,7 +23,7 @@ from __future__ import absolute_import
 # @author: see AUTHORS file
 from numbers import Number
 
-from legacy_openpyxl.shared.units import short_color
+from legacy_openpyxl.units import short_color
 
 from .reference import Reference
 

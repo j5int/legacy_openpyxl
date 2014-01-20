@@ -1,8 +1,8 @@
 import pytest
 import os
 
-from legacy_openpyxl.shared.xmltools import Element, fromstring, safe_iterator
-from legacy_openpyxl.shared.ooxml import CHART_NS
+from legacy_openpyxl.xml.xmltools import Element, fromstring, safe_iterator
+from legacy_openpyxl.xml.ooxml import CHART_NS
 
 from legacy_openpyxl.writer.charts import (ChartWriter,
                                     PieChartWriter,
@@ -11,7 +11,7 @@ from legacy_openpyxl.writer.charts import (ChartWriter,
                                     ScatterChartWriter,
                                     BaseChartWriter
                                     )
-from legacy_openpyxl.style import Color
+from legacy_openpyxl.styles import Color
 
 from .helper import get_xml, DATADIR, compare_xml
 from .schema import chart_schema

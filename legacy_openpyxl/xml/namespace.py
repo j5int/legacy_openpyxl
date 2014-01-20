@@ -21,36 +21,35 @@ from __future__ import absolute_import
 #
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
-from __future__ import absolute_import
 
-from tempfile import NamedTemporaryFile
+import re
 
-from legacy_openpyxl import LXML
+# Python 2.6 without lxml
+def register_namespace(prefix, uri):
+    if re.match("ns\d+$", prefix):
+        raise ValueError("Prefix format reserved for internal use")
+    for k, v in _namespace_map.items():
+        if k == uri or v == prefix:
+            del _namespace_map[k]
+    _namespace_map[uri] = prefix
 
-if LXML is True:
-    from lxml.etree import iterparse
-else:
-    from legacy_openpyxl.shared.compat.elementtree import iterparse
-
-from .strings import (
-    basestring,
-    unicode,
-    StringIO,
-    file,
-    BytesIO,
-    tempfile,
-    safe_string
-    )
-from .numbers import long
-from .itertools import xrange, ifilter, iteritems, iterkeys
-
-# Python 2.6
-try:
-    from collections import OrderedDict
-except ImportError:
-    from .odict import OrderedDict
+_namespace_map = {
+    # "well-known" namespace prefixes
+    "http://www.w3.org/XML/1998/namespace": "xml",
+    "http://www.w3.org/1999/xhtml": "html",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
+    "http://schemas.xmlsoap.org/wsdl/": "wsdl",
+    # xml schema
+    "http://www.w3.org/2001/XMLSchema": "xs",
+    "http://www.w3.org/2001/XMLSchema-instance": "xsi",
+    # dublin core
+    "http://purl.org/dc/elements/1.1/": "dc",
+}
 
 try:
-    from xml.etree.ElementTree import register_namespace
+    from xml.etree.cElementTree import register_namespace
 except ImportError:
-    from .elementtree import register_namespace
+    try:
+        from xml.etree.ElementTree import register_namespace
+    except ImportError:
+        pass

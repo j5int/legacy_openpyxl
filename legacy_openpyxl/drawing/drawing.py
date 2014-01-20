@@ -23,8 +23,8 @@ from __future__ import absolute_import
 # @author: see AUTHORS file
 
 import math
-from legacy_openpyxl.style import Color
-from legacy_openpyxl.shared.units import pixels_to_EMU, EMU_to_pixels, short_color
+from legacy_openpyxl.styles import Color
+from legacy_openpyxl.units import pixels_to_EMU, EMU_to_pixels, short_color
 from legacy_openpyxl.cell import column_index_from_string
 
 class Shadow(object):

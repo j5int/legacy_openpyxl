@@ -10,6 +10,9 @@ Module :mod:`legacy_openpyxl[.]worksheet` -- Worksheet
 .. autoclass:: openpyxl.worksheet.Worksheet
        :members:
 
+.. autoclass:: openpyxl.worksheet.AutoFilter
+       :members:
+
 Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Optimized reader
 ================================================================
 

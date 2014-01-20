@@ -24,7 +24,7 @@ from __future__ import absolute_import
 
 from collections import Mapping
 
-from legacy_openpyxl.shared.compat import iteritems, OrderedDict
+from legacy_openpyxl.compat import iteritems, OrderedDict
 from .colors import Color
 
 

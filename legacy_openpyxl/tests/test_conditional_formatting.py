@@ -26,17 +26,17 @@ import os.path
 from xml.sax.saxutils import XMLGenerator
 
 # compatibility imports
-from legacy_openpyxl.shared.compat import StringIO
+from legacy_openpyxl.compat import StringIO
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
-from legacy_openpyxl.shared.compat import iterkeys
+from legacy_openpyxl.compat import iterkeys
 
 # package imports
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.reader.style import read_style_table
-from legacy_openpyxl.shared.ooxml import ARC_STYLE
+from legacy_openpyxl.xml.ooxml import ARC_STYLE
 from legacy_openpyxl.writer.worksheet import write_worksheet_conditional_formatting
 from legacy_openpyxl.writer.styles import StyleWriter
-from legacy_openpyxl.style import Border, Color, Fill, Font, Borders, HashableObject
+from legacy_openpyxl.styles import Border, Color, Fill, Font, Borders, HashableObject
 
 # test imports
 import pytest

@@ -22,19 +22,4 @@ from __future__ import absolute_import
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-"""Imports for the openpyxl.shared namespace."""
-
-# package imports
-from legacy_openpyxl.shared import date_time
-from legacy_openpyxl.shared import exc
-from legacy_openpyxl.shared import ooxml
-from legacy_openpyxl.shared import password_hasher
-from legacy_openpyxl.shared import xmltools
-from legacy_openpyxl.shared.compat import long
-import decimal
-
-NUMERIC_TYPES = (int, float, long, decimal.Decimal)
-
-# both values in points
-DEFAULT_ROW_HEIGHT = 15.
-DEFAULT_COLUMN_WIDTH = 51.85
+from .cell import *

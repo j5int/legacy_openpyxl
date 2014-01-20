@@ -30,7 +30,7 @@ import pytest
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.namedrange import split_named_range, NamedRange
 from legacy_openpyxl.reader.workbook import read_named_ranges
-from legacy_openpyxl.shared.exc import NamedRangeException
+from legacy_openpyxl.exceptions import NamedRangeException
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.workbook import Workbook
 
