@@ -32,6 +32,7 @@ import warnings
 # compatibility imports
 from legacy_openpyxl.compat import unicode, file, StringIO
 
+
 # package imports
 from legacy_openpyxl.exceptions import OpenModeError, InvalidFileException
 from legacy_openpyxl.xml.ooxml import (
@@ -42,6 +43,7 @@ from legacy_openpyxl.xml.ooxml import (
     ARC_THEME,
     PACKAGE_XL,
 )
+
 from legacy_openpyxl.workbook import Workbook, DocumentProperties
 from legacy_openpyxl.reader.strings import read_string_table
 from legacy_openpyxl.reader.style import read_style_table
@@ -151,6 +153,9 @@ def _load_workbook(wb, archive, filename, use_iterators, keep_vba):
     # workbook so that is available for the save.
     if keep_vba:
         wb.vba_archive = archive
+
+    if use_iterators:
+        wb._archive = ZipFile(filename)
 
     # get workbook-level information
     try:

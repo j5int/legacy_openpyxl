@@ -33,10 +33,10 @@ from legacy_openpyxl.xml.xmltools import iterparse
 
 # package imports
 from legacy_openpyxl.cell import get_column_letter
-from legacy_openpyxl.xml.xmltools import safe_iterator
 from legacy_openpyxl.cell import Cell, coordinate_from_string
 from legacy_openpyxl.worksheet import Worksheet, ColumnDimension, RowDimension
 from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
+from legacy_openpyxl.xml.xmltools import safe_iterator
 from legacy_openpyxl.styles import Color
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
 
@@ -316,7 +316,7 @@ def read_worksheet(xml_source, parent, preset_title, string_table,
     if workbook_name and worksheet_path:
         from legacy_openpyxl.reader.iter_worksheet import IterableWorksheet
         ws = IterableWorksheet(parent, preset_title, workbook_name,
-                worksheet_path, xml_source, string_table)
+                worksheet_path, xml_source, string_table, style_table)
     else:
         ws = Worksheet(parent, preset_title)
         fast_parse(ws, xml_source, string_table, style_table, color_index)
