@@ -43,7 +43,6 @@ from legacy_openpyxl.units import (
 )
 from legacy_openpyxl.compat import unicode, basestring
 from legacy_openpyxl.date_time import (
-    SharedDate,
     to_excel,
     time_to_days,
     timedelta_to_days,

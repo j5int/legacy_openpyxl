@@ -33,7 +33,7 @@ from legacy_openpyxl.compat import OrderedDict
 from legacy_openpyxl.cell import  get_column_letter, Cell
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.xml.xmltools import (XMLGenerator, start_tag, end_tag, tag)
-from legacy_openpyxl.date_time import SharedDate
+from legacy_openpyxl.date_time import to_excel
 from legacy_openpyxl.xml.ooxml import MAX_COLUMN, MAX_ROW
 from legacy_openpyxl.units import NUMERIC_TYPES
 from legacy_openpyxl.exceptions import WorkbookAlreadySaved
@@ -85,8 +85,8 @@ class DumpWorksheet(Worksheet):
         self._fileobj_content_name = create_temporary_file(suffix='.content')
         self._fileobj_name = create_temporary_file()
 
-        self._shared_date = SharedDate()
         self._string_builder = self._parent.strings_table_builder
+
 
     def get_temporary_file(self, filename):
         if filename in self._descriptors_cache:
@@ -228,7 +228,7 @@ class DumpWorksheet(Worksheet):
                 dtype = 'numeric'
             elif isinstance(cell, (datetime.datetime, datetime.date)):
                 dtype = 'datetime'
-                cell = self._shared_date.datetime_to_julian(cell)
+                cell = to_excel(cell)
                 attributes['s'] = STYLES[dtype]['style']
             elif cell and cell[0] == '=':
                 dtype = 'formula'
