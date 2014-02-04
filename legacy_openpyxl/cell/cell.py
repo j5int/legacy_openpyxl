@@ -36,7 +36,7 @@ __docformat__ = "restructuredtext en"
 import datetime
 import re
 
-from legacy_openpyxl.compat import lru_cache
+from legacy_openpyxl.compat import lru_cache, xrange
 from legacy_openpyxl.units import (
     NUMERIC_TYPES,
     DEFAULT_ROW_HEIGHT,
