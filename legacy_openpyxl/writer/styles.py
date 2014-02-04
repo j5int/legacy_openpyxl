@@ -25,8 +25,8 @@ from __future__ import absolute_import
 """Write the shared style table."""
 
 # package imports
-from legacy_openpyxl.xml.xmltools import Element, SubElement
-from legacy_openpyxl.xml.xmltools import get_document_content
+from legacy_openpyxl.xml.functions import Element, SubElement
+from legacy_openpyxl.xml.functions import get_document_content
 from legacy_openpyxl.styles import DEFAULTS
 
 class StyleWriter(object):

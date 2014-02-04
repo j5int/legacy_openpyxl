@@ -29,14 +29,14 @@ from warnings import warn
 
 # compatibility imports
 from legacy_openpyxl.compat import BytesIO
-from legacy_openpyxl.xml.xmltools import iterparse
+from legacy_openpyxl.xml.functions import iterparse
 
 # package imports
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.cell import Cell, coordinate_from_string
 from legacy_openpyxl.worksheet import Worksheet, ColumnDimension, RowDimension
-from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
-from legacy_openpyxl.xml.xmltools import safe_iterator
+from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
+from legacy_openpyxl.xml.functions import safe_iterator
 from legacy_openpyxl.styles import Color
 from legacy_openpyxl.styles.formatting import ConditionalFormatting
 

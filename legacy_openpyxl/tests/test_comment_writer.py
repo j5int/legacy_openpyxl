@@ -28,8 +28,8 @@ from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.writer.comments import CommentWriter
 from legacy_openpyxl.comments import Comment
 from legacy_openpyxl.tests.helper import DATADIR, compare_xml
-from legacy_openpyxl.xml.xmltools import fromstring, get_document_content
-from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
+from legacy_openpyxl.xml.functions import fromstring, get_document_content
+from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 from legacy_openpyxl.writer.comments import vmlns, excelns
 
 def _create_ws():

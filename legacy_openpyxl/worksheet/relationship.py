@@ -22,8 +22,8 @@ from __future__ import absolute_import
 # @license: http://www.opensource.org/licenses/mit-license.php
 # @author: see AUTHORS file
 
-from legacy_openpyxl.xml.ooxml import REL_NS, PKG_REL_NS
-from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.xml.constants import REL_NS, PKG_REL_NS
+from legacy_openpyxl.xml.functions import Element, SubElement, get_document_content
 
 class Relationship(object):
     """Represents many kinds of relationships."""

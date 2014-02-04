@@ -23,12 +23,12 @@ from __future__ import absolute_import
 # @author: see AUTHORS file
 
 
-from legacy_openpyxl.xml.xmltools import (
+from legacy_openpyxl.xml.functions import (
     Element,
     SubElement,
     get_document_content
     )
-from legacy_openpyxl.xml.ooxml import (
+from legacy_openpyxl.xml.constants import (
     CHART_NS,
     DRAWING_NS,
     REL_NS,

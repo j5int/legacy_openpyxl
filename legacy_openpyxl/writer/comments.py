@@ -23,8 +23,8 @@ from __future__ import absolute_import
 # @author: see AUTHORS file
 
 from legacy_openpyxl.compat import iteritems
-from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
-from legacy_openpyxl.xml.xmltools import Element, SubElement, get_document_content
+from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
+from legacy_openpyxl.xml.functions import Element, SubElement, get_document_content
 from legacy_openpyxl.cell import column_index_from_string
 
 vmlns="urn:schemas-microsoft-com:vml"

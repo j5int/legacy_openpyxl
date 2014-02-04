@@ -41,7 +41,7 @@ except ImportError:
 
 # package imports
 from legacy_openpyxl.exceptions import OpenModeError, InvalidFileException
-from legacy_openpyxl.xml.ooxml import (
+from legacy_openpyxl.xml.constants import (
     ARC_SHARED_STRINGS,
     ARC_CORE,
     ARC_WORKBOOK,

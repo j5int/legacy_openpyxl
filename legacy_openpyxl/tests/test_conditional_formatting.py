@@ -33,7 +33,7 @@ from legacy_openpyxl.compat import iterkeys
 # package imports
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.reader.style import read_style_table
-from legacy_openpyxl.xml.ooxml import ARC_STYLE
+from legacy_openpyxl.xml.constants import ARC_STYLE
 from legacy_openpyxl.writer.worksheet import write_worksheet_conditional_formatting
 from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.styles import Border, Color, Fill, Font, Borders, HashableObject

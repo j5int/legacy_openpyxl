@@ -33,7 +33,7 @@ import re
 
 # compatibility
 from legacy_openpyxl.compat import xrange, unicode
-from legacy_openpyxl.xml.xmltools import iterparse
+from legacy_openpyxl.xml.functions import iterparse
 
 # package
 from legacy_openpyxl import LXML
@@ -47,7 +47,7 @@ from legacy_openpyxl.cell import (
 from legacy_openpyxl.styles import is_date_format
 from legacy_openpyxl.date_time import from_excel
 from legacy_openpyxl.reader.worksheet import read_dimension
-from legacy_openpyxl.xml.ooxml import (
+from legacy_openpyxl.xml.constants import (
     PACKAGE_WORKSHEETS,
     SHEET_MAIN_NS
 )

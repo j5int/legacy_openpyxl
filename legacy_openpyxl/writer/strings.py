@@ -28,7 +28,7 @@ from __future__ import absolute_import
 from legacy_openpyxl.compat import StringIO
 
 # package imports
-from legacy_openpyxl.xml.xmltools import start_tag, end_tag, tag, XMLGenerator
+from legacy_openpyxl.xml.functions import start_tag, end_tag, tag, XMLGenerator
 
 
 def create_string_table(workbook):

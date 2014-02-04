@@ -33,7 +33,7 @@ from legacy_openpyxl.compat import StringIO, long
 
 # package imports
 from legacy_openpyxl.cell import coordinate_from_string, column_index_from_string, COORD_RE
-from legacy_openpyxl.xml.xmltools import (
+from legacy_openpyxl.xml.functions import (
     Element,
     SubElement,
     XMLGenerator,
@@ -43,7 +43,7 @@ from legacy_openpyxl.xml.xmltools import (
     tag,
     fromstring,
     )
-from legacy_openpyxl.xml.ooxml import (
+from legacy_openpyxl.xml.constants import (
     SHEET_MAIN_NS,
     PKG_REL_NS,
     REL_NS,

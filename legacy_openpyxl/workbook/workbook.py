@@ -39,8 +39,8 @@ from legacy_openpyxl.styles import Style
 from legacy_openpyxl.writer.excel import save_workbook
 from legacy_openpyxl.exceptions import ReadOnlyWorkbookException
 from legacy_openpyxl.date_time import CALENDAR_WINDOWS_1900
-from legacy_openpyxl.xml.xmltools import fromstring
-from legacy_openpyxl.xml.ooxml import SHEET_MAIN_NS
+from legacy_openpyxl.xml.functions import fromstring
+from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 
 
 class DocumentProperties(object):

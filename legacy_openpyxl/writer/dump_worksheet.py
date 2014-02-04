@@ -32,9 +32,9 @@ from legacy_openpyxl.compat import OrderedDict
 
 from legacy_openpyxl.cell import  get_column_letter, Cell
 from legacy_openpyxl.worksheet import Worksheet
-from legacy_openpyxl.xml.xmltools import (XMLGenerator, start_tag, end_tag, tag)
+from legacy_openpyxl.xml.functions import (XMLGenerator, start_tag, end_tag, tag)
 from legacy_openpyxl.date_time import to_excel
-from legacy_openpyxl.xml.ooxml import MAX_COLUMN, MAX_ROW
+from legacy_openpyxl.xml.constants import MAX_COLUMN, MAX_ROW
 from legacy_openpyxl.units import NUMERIC_TYPES
 from legacy_openpyxl.exceptions import WorkbookAlreadySaved
 from legacy_openpyxl.writer.excel import ExcelWriter
@@ -42,7 +42,7 @@ from legacy_openpyxl.writer.strings import write_string_table
 from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.styles import Style, NumberFormat
 
-from legacy_openpyxl.xml.ooxml import (ARC_SHARED_STRINGS, PACKAGE_WORKSHEETS)
+from legacy_openpyxl.xml.constants import (ARC_SHARED_STRINGS, PACKAGE_WORKSHEETS)
 
 STYLES = {'datetime' : {'type':Cell.TYPE_NUMERIC,
                         'style':'1'},
