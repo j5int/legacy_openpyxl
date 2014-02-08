@@ -6,7 +6,7 @@ and the common routines in openpyxl won't be able to handle that load.
 Hopefully, there are two modes that enable you to read and write unlimited
 amounts of data with (near) constant memory consumption.
 
-Introducing :class:`legacy_openpyxl[.]reader.iter_worksheet.IterableWorksheet`::
+Introducing :class:`legacy_openpyxl[.]worksheet.iter_worksheet.IterableWorksheet`::
 
     from openpyxl import load_workbook
     wb = load_workbook(filename = 'large_file.xlsx', use_iterators = True)
@@ -16,16 +16,15 @@ Introducing :class:`legacy_openpyxl[.]reader.iter_worksheet.IterableWorksheet`::
 
         for cell in row:
 
-            print cell.internal_value
+            print cell.value
 
 .. warning::
 
-    * As you can see, we are using cell.internal_value instead of .value.
-    * :class:`legacy_openpyxl[.]reader.iter_worksheet.IterableWorksheet` are read-only
-    * cell, range, rows, columns methods and properties are disabled
+    * :class:`legacy_openpyxl[.]worksheet.iter_worksheet.IterableWorksheet` are read-only
+    * range, rows, columns methods and properties are disabled
 
 Cells returned by iter_rows() are not regular :class:`legacy_openpyxl[.]cell.Cell` but
-:class:`legacy_openpyxl[.]reader.iter_worksheet.RawCell`.
+:class:`legacy_openpyxl[.]worksheet.iter_worksheet.RawCell`.
 
 Optimized writer
 ================

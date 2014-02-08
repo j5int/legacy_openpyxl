@@ -13,13 +13,13 @@ Module :mod:`legacy_openpyxl[.]worksheet` -- Worksheet
 .. autoclass:: openpyxl.worksheet.AutoFilter
        :members:
 
-Module :mod:`legacy_openpyxl[.]reader.iter_worksheet` -- Optimized reader
-================================================================
+Module :mod:`legacy_openpyxl[.]worksheet.iter_worksheet` -- Optimized reader
+===================================================================
 
-.. autoclass:: openpyxl.reader.iter_worksheet.IterableWorksheet
+.. autoclass:: openpyxl.worksheet.iter_worksheet.IterableWorksheet
     :members:
 
-.. autoclass:: openpyxl.reader.iter_worksheet.RawCell
+.. autoclass:: openpyxl.worksheet.iter_worksheet.RawCell
     :members:
 
 Module :mod:`legacy_openpyxl[.]cell` -- Worksheet Cell
