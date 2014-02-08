@@ -2,9 +2,10 @@ from __future__ import absolute_import
 # Copyright (c) 2010-2014 openpyxl
 
 
+from legacy_openpyxl.compat import unicode
 from legacy_openpyxl.date_time import from_excel
-from .cell import Cell
 from legacy_openpyxl.styles import is_date_format
+from .cell import Cell
 
 
 class RawCell(object):
