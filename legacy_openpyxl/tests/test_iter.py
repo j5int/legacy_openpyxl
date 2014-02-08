@@ -28,7 +28,7 @@ import os.path
 import pytest
 
 from legacy_openpyxl.tests.helper import DATADIR
-from legacy_openpyxl.reader.iter_worksheet import get_range_boundaries
+from legacy_openpyxl.worksheet.iter_worksheet import get_range_boundaries
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.compat import xrange
 
