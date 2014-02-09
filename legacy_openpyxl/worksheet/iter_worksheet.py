@@ -28,14 +28,12 @@ from __future__ import absolute_import
 # stdlib
 import operator
 from itertools import groupby
-import re
 
 # compatibility
 from legacy_openpyxl.compat import xrange
 from legacy_openpyxl.xml.functions import iterparse
 
 # package
-from legacy_openpyxl import LXML
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.cell import (
     coordinate_from_string,
@@ -46,11 +44,8 @@ from legacy_openpyxl.cell import (
 from legacy_openpyxl.cell.read_only import RawCell, EMPTY_CELL
 from legacy_openpyxl.reader.worksheet import read_dimension
 from legacy_openpyxl.xml.functions import safe_iterator
+from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 
-from legacy_openpyxl.xml.constants import (
-    PACKAGE_WORKSHEETS,
-    SHEET_MAIN_NS
-)
 
 def get_range_boundaries(range_string, row_offset=0, column_offset=1):
 
