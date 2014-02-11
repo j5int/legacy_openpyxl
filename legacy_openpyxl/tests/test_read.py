@@ -36,7 +36,7 @@ from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.styles import NumberFormat, Style
-from legacy_openpyxl.reader.worksheet import read_worksheet, read_dimension
+from legacy_openpyxl.reader.worksheet import read_worksheet
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.exceptions import InvalidFileException
 from legacy_openpyxl.date_time import CALENDAR_WINDOWS_1900, CALENDAR_MAC_1904
@@ -108,27 +108,6 @@ def test_read_empty_archive():
     with pytest.raises(InvalidFileException):
         load_workbook(null_file)
 
-@pytest.mark.parametrize("filename", ["sheet2.xml", "sheet2_no_dimension.xml"])
-def test_read_dimension(filename):
-    path = os.path.join(DATADIR, 'reader', filename)
-    dimension = None
-    with open(path) as handle:
-        dimension = read_dimension(handle.read())
-    assert dimension == ('D', 1, 'AA', 30)
-
-def test_calculate_dimension_iter():
-    path = os.path.join(DATADIR, 'genuine', 'empty.xlsx')
-    wb = load_workbook(filename=path, use_iterators=True)
-    sheet2 = wb.get_sheet_by_name('Sheet2 - Numbers')
-    dimensions = sheet2.calculate_dimension()
-    assert '%s%s:%s%s' % ('D', 1, 'AA', 30) == dimensions
-
-def test_get_highest_row_iter():
-    path = os.path.join(DATADIR, 'genuine', 'empty.xlsx')
-    wb = load_workbook(filename=path, use_iterators=True)
-    sheet2 = wb.get_sheet_by_name('Sheet2 - Numbers')
-    max_row = sheet2.get_highest_row()
-    assert 30 == max_row
 
 @pytest.mark.xfail
 def test_read_workbook_with_no_properties():
