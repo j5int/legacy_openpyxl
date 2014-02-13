@@ -36,6 +36,7 @@ from legacy_openpyxl import LXML
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.cell import Cell, coordinate_from_string
 from legacy_openpyxl.worksheet import Worksheet, ColumnDimension, RowDimension
+from legacy_openpyxl.worksheet.iter_worksheet import IterableWorksheet
 from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 from legacy_openpyxl.xml.functions import safe_iterator
 from legacy_openpyxl.styles import Color
@@ -301,7 +302,6 @@ def read_worksheet(xml_source, parent, preset_title, string_table,
                    style_table, color_index=None, worksheet_path=None, keep_vba=False):
     """Read an xml worksheet"""
     if worksheet_path:
-        from legacy_openpyxl.worksheet.iter_worksheet import IterableWorksheet
         ws = IterableWorksheet(parent, preset_title,
                 worksheet_path, xml_source, string_table, style_table)
     else:
