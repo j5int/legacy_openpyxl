@@ -38,7 +38,8 @@ from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.writer.excel import save_virtual_workbook
 from legacy_openpyxl.writer.styles import StyleWriter
 from legacy_openpyxl.styles import NumberFormat, Border, Color, Font, Fill, Borders
-from legacy_openpyxl.styles.formatting import ConditionalFormatting, FormulaRule
+from legacy_openpyxl.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting.rules import FormulaRule
 from legacy_openpyxl.xml.functions import Element, SubElement, tostring
 from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 

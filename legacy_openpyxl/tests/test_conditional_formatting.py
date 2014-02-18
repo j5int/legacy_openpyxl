@@ -28,7 +28,8 @@ from xml.sax.saxutils import XMLGenerator
 # compatibility imports
 from legacy_openpyxl import Workbook
 from legacy_openpyxl.compat import StringIO
-from legacy_openpyxl.styles.formatting import ConditionalFormatting, ColorScaleRule, CellIsRule, FormulaRule
+from legacy_openpyxl.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting.rules import ColorScaleRule, CellIsRule, FormulaRule
 from legacy_openpyxl.compat import iterkeys
 
 # package imports
