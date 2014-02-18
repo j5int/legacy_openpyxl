@@ -40,7 +40,8 @@ from legacy_openpyxl.worksheet.iter_worksheet import IterableWorksheet
 from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 from legacy_openpyxl.xml.functions import safe_iterator
 from legacy_openpyxl.styles import Color
-from legacy_openpyxl.styles.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting.rules import FormatRule, CellIsRule, ColorScaleRule, FormatRule
 
 
 def _get_xml_iter(xml_source):

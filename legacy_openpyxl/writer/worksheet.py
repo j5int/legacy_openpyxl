@@ -51,7 +51,7 @@ from legacy_openpyxl.xml.constants import (
     VML_NS
 )
 from legacy_openpyxl.compat.itertools import iteritems, iterkeys
-from legacy_openpyxl.styles.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting import ConditionalFormatting
 
 
 def row_sort(cell):

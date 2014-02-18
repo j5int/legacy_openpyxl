@@ -47,7 +47,7 @@ from legacy_openpyxl.units import (
     DEFAULT_ROW_HEIGHT
     )
 from legacy_openpyxl.styles import Style, DEFAULTS as DEFAULTS_STYLE
-from legacy_openpyxl.styles.formatting import ConditionalFormatting
+from legacy_openpyxl.formatting import ConditionalFormatting
 from legacy_openpyxl.namedrange import NamedRangeContainingValue
 from legacy_openpyxl.compat import OrderedDict, unicode, xrange, basestring
 from legacy_openpyxl.compat.itertools import iteritems

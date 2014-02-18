@@ -3,6 +3,7 @@ from __future__ import absolute_import
 
 from legacy_openpyxl.compat import iteritems, OrderedDict
 
+from legacy_openpyxl.styles import Font, Fill, Borders
 from .rules import CellIsRule, ColorScaleRule, FormatRule
 
 
