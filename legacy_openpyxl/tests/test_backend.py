@@ -49,8 +49,8 @@ def test_backend():
 
 
 def test_namespace_register():
-    from legacy_openpyxl.shared.xmltools import Element, tostring
-    from legacy_openpyxl.shared.ooxml import SHEET_MAIN_NS
+    from legacy_openpyxl.xml.functions import Element, tostring
+    from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 
     e = Element('{%s}sheet' % SHEET_MAIN_NS)
     xml = tostring(e)
