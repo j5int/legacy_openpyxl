@@ -28,9 +28,19 @@ import zipfile
 from legacy_openpyxl.compat import BytesIO
 
 # package imports
+from legacy_openpyxl.tests.helper import compare_xml
 from legacy_openpyxl.reader.excel import load_workbook
 from legacy_openpyxl.writer.excel import save_virtual_workbook
+from legacy_openpyxl.writer.workbook import write_content_types
 
+def test_write_content_types(datadir):
+    path = str(datadir.join('reader').join('vba-test.xlsm'))
+    wb = load_workbook(path, keep_vba=True)
+    content = write_content_types(wb)
+    reference_file = str(datadir.join('writer').join('expected').join('Content_types_vba.xml'))
+    with open(reference_file) as expected:
+        diff = compare_xml(content, expected.read())
+        assert diff is None, diff
 
 def test_save_vba(datadir):
     path = str(datadir.join('reader').join('vba-test.xlsm'))
