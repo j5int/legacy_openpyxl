@@ -30,10 +30,18 @@ from tempfile import NamedTemporaryFile
 
 from legacy_openpyxl.compat import OrderedDict
 
-from legacy_openpyxl.cell import  get_column_letter, Cell
+from legacy_openpyxl.cell import  get_column_letter, Cell, TIME_TYPES
 from legacy_openpyxl.worksheet import Worksheet
-from legacy_openpyxl.xml.functions import (XMLGenerator, start_tag, end_tag, tag)
-from legacy_openpyxl.date_time import to_excel
+from legacy_openpyxl.xml.functions import (
+    XMLGenerator,
+    start_tag,
+    end_tag, tag
+)
+from legacy_openpyxl.date_time import (
+    to_excel,
+    timedelta_to_days,
+    time_to_days
+)
 from legacy_openpyxl.xml.constants import MAX_COLUMN, MAX_ROW
 from legacy_openpyxl.units import NUMERIC_TYPES
 from legacy_openpyxl.exceptions import WorkbookAlreadySaved
@@ -226,9 +234,14 @@ class DumpWorksheet(Worksheet):
                 dtype = 'boolean'
             elif isinstance(cell, NUMERIC_TYPES):
                 dtype = 'numeric'
-            elif isinstance(cell, (datetime.datetime, datetime.date)):
+            elif isinstance(cell, TIME_TYPES):
                 dtype = 'datetime'
-                cell = to_excel(cell)
+                if isinstance(cell, datetime.date):
+                    cell = to_excel(cell)
+                elif isinstance(cell, datetime.time):
+                    cell = time_to_days(cell)
+                elif isinstance(cell, datetime.timedelta):
+                    cell = timedelta_to_days(cell)
                 attributes['s'] = STYLES[dtype]['style']
             elif cell and cell[0] == '=':
                 dtype = 'formula'
