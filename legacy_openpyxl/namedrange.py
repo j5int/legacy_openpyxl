@@ -32,7 +32,9 @@ from legacy_openpyxl.compat import unicode
 from legacy_openpyxl.exceptions import NamedRangeException
 
 # constants
-NAMED_RANGE_RE = re.compile("^(('(?P<quoted>([^']|'')*)')|(?P<notquoted>[^']*))!(?P<range>(\$([A-Za-z]+))?(\$([0-9]+))?(:(\$([A-Za-z]+))?(\$([0-9]+))?)?)")
+NAMED_RANGE_RE = re.compile("""
+^(('(?P<quoted>([^']|'')*)')|(?P<notquoted>[^']*))
+!(?P<range>(\$([A-Za-z]+))?(\$([0-9]+))?(:(\$([A-Za-z]+))?(\$([0-9]+))?)?)""", re.VERBOSE)
 SPLIT_NAMED_RANGE_RE = re.compile(r"((?:[^,']|'(?:[^']|'')*')+)")
 
 class NamedRange(object):
