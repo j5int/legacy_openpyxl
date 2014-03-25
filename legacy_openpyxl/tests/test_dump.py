@@ -33,7 +33,6 @@ from legacy_openpyxl.workbook import Workbook
 from legacy_openpyxl.writer import dump_worksheet
 from legacy_openpyxl.cell import get_column_letter
 from legacy_openpyxl.reader.excel import load_workbook
-from legacy_openpyxl.writer.strings import StringTableBuilder
 from legacy_openpyxl.compat import xrange
 from legacy_openpyxl.exceptions import WorkbookAlreadySaved
 
@@ -103,16 +102,6 @@ def test_dump_sheet():
         for ex_cell, ws_cell in zip(ex_row, ws_row):
             assert ex_cell == ws_cell.value
     os.remove(test_filename)
-
-
-def test_table_builder():
-    table = StringTableBuilder()
-    values = ['a', 'b', 'c', 'd']
-
-    for letter in values:
-        for x in range(5):
-            table.add(letter)
-    assert list(table) == values
 
 
 def test_open_too_many_files():
