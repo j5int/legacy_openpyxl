@@ -3,8 +3,6 @@ from random import Random
 from tempfile import TemporaryFile
 import time
 
-from profilehooks import profile
-
 import legacy_openpyxl
 from legacy_openpyxl.styles import Style, Alignment, Font
 
@@ -61,7 +59,6 @@ def non_optimized_workbook(styles):
     return wb
 
 
-# @profile(filename='styles-benchmark.prof')
 def to_profile(wb, f, n):
     t = -time.time()
     wb.save(f)
