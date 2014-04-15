@@ -15,3 +15,12 @@ def Worksheet():
     from legacy_openpyxl.worksheet import Worksheet
     return Worksheet
 
+
+# Global fixtures
+
+@pytest.fixture
+def root_xml():
+    """Root XML element <test>"""
+    from legacy_openpyxl.xml.functions import Element
+    return Element("test")
+
