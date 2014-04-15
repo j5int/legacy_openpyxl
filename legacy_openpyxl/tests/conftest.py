@@ -11,92 +11,6 @@ def NumberFormat():
 
 
 @pytest.fixture
-def Workbook():
-    """Workbook Class"""
-    from legacy_openpyxl import Workbook
-    return Workbook
-
-
-@pytest.fixture
-def Worksheet():
-    """Worksheet Class"""
-    from legacy_openpyxl.worksheet import Worksheet
-    return Worksheet
-
-
-# Charts
-
-@pytest.fixture
-def Chart():
-    """Chart class"""
-    from legacy_openpyxl.charts.chart import Chart
-    return Chart
-
-
-@pytest.fixture
-def GraphChart():
-    """GraphicChart class"""
-    from legacy_openpyxl.charts.chart import GraphChart
-    return GraphChart
-
-
-@pytest.fixture
-def Axis():
-    """Axis class"""
-    from legacy_openpyxl.charts.axis import Axis
-    return Axis
-
-
-@pytest.fixture
-def PieChart():
-    """PieChart class"""
-    from legacy_openpyxl.charts import PieChart
-    return PieChart
-
-
-@pytest.fixture
-def LineChart():
-    """LineChart class"""
-    from legacy_openpyxl.charts import LineChart
-    return LineChart
-
-
-@pytest.fixture
-def BarChart():
-    """BarChart class"""
-    from legacy_openpyxl.charts import BarChart
-    return BarChart
-
-
-@pytest.fixture
-def ScatterChart():
-    """ScatterChart class"""
-    from legacy_openpyxl.charts import ScatterChart
-    return ScatterChart
-
-
-@pytest.fixture
-def Reference():
-    """Reference class"""
-    from legacy_openpyxl.charts import Reference
-    return Reference
-
-
-@pytest.fixture
-def Series():
-    """Serie class"""
-    from legacy_openpyxl.charts import Series
-    return Series
-
-
-@pytest.fixture
-def ErrorBar():
-    """ErrorBar class"""
-    from legacy_openpyxl.charts import ErrorBar
-    return ErrorBar
-
-
-@pytest.fixture
 def Image():
     """Image class"""
     from legacy_openpyxl.drawing import Image
@@ -122,20 +36,6 @@ def ws(Workbook):
     ws.title = 'data'
     return ws
 
-
-@pytest.fixture
-def ten_row_sheet(ws):
-    """Worksheet with values 0-9 in the first column"""
-    for i in range(10):
-        ws.cell(row=i, column=0).value = i
-    return ws
-
-
-@pytest.fixture
-def ten_column_sheet(ws):
-    """Worksheet with values 0-9 in the first row"""
-    ws.append(list(range(10)))
-    return ws
 
 from legacy_openpyxl.xml.functions import Element
 
