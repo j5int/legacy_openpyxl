@@ -36,6 +36,7 @@ from legacy_openpyxl.worksheet.iter_worksheet import IterableWorksheet
 from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 from legacy_openpyxl.xml.functions import safe_iterator
 from legacy_openpyxl.styles import Color
+from legacy_openpyxl.styles import colors
 from legacy_openpyxl.formatting import ConditionalFormatting
 
 
@@ -241,7 +242,7 @@ class WorkSheetParser(object):
                         rule['colorScale']['cfvo'].append(cfvo)
                     colorNodes = colorScale.findall('{%s}color' % SHEET_MAIN_NS)
                     for color in colorNodes:
-                        index = Color.BLACK
+                        index = colors.BLACK
                         if (self.color_index
                             and color.get('indexed') is not None
                             and 0 <= int(color.get('indexed')) < len(self.color_index)):
