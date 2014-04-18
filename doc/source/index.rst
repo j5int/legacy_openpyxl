@@ -1,7 +1,7 @@
 :mod:`legacy_openpyxl` - A Python library to read/write Excel 2007 xlsx/xlsm files
 ===========================================================================
 
-.. module:: openpyxl
+.. module:: legacy_openpyxl
 .. moduleauthor:: Eric Gazoni
 
 :Author: Eric Gazoni
