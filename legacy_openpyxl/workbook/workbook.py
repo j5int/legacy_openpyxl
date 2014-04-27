@@ -31,7 +31,7 @@ import datetime
 import threading
 
 # package imports
-from legacy_openpyxl.strings import IndexedList
+from legacy_openpyxl.collections import IndexedList
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.writer.dump_worksheet import DumpWorksheet, save_dump
 from legacy_openpyxl.namedrange import NamedRange

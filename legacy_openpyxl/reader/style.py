@@ -1,5 +1,4 @@
 from __future__ import absolute_import
-from legacy_openpyxl.strings import IndexedList
 # Copyright (c) 2010-2014 openpyxl
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,6 +25,7 @@ from legacy_openpyxl.strings import IndexedList
 """Read shared style definitions"""
 
 # package imports
+from legacy_openpyxl.collections import IndexedList
 from legacy_openpyxl.xml.functions import fromstring, safe_iterator
 from legacy_openpyxl.exceptions import MissingNumberFormat
 from legacy_openpyxl.styles import (Style, NumberFormat, Font, Fill, Borders,

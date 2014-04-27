@@ -35,7 +35,7 @@ import pytest
 from legacy_openpyxl.compat import BytesIO, StringIO, unicode, tempfile
 
 # package imports
-from legacy_openpyxl.strings import IndexedList
+from legacy_openpyxl.collections import IndexedList
 from legacy_openpyxl.tests.helper import DATADIR
 from legacy_openpyxl.worksheet import Worksheet
 from legacy_openpyxl.workbook import Workbook
