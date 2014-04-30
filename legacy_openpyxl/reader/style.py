@@ -28,7 +28,7 @@ from __future__ import absolute_import
 from legacy_openpyxl.collections import IndexedList
 from legacy_openpyxl.xml.functions import fromstring, safe_iterator
 from legacy_openpyxl.exceptions import MissingNumberFormat
-from legacy_openpyxl.styles import (Style, NumberFormat, Font, Fill, Borders,
+from legacy_openpyxl.styles import (Style, NumberFormat, Font, PatternFill, Borders,
                              Protection, Alignment)
 from legacy_openpyxl.styles.border import Border
 from legacy_openpyxl.styles import borders
@@ -175,7 +175,7 @@ class SharedStylesParser(object):
                 color = self._get_relevant_color(bgColor)
                 if color is not None:
                     fill['end_color'] = Color(color)
-        return Fill(**fill)
+        return PatternFill(**fill)
 
     def parse_borders(self):
         """Read in the boarders"""
