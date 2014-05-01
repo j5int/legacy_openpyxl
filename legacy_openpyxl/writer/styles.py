@@ -35,6 +35,7 @@ from legacy_openpyxl.compat import safe_string
 from legacy_openpyxl.xml.constants import SHEET_MAIN_NS
 
 from legacy_openpyxl.styles import DEFAULTS, Protection
+from legacy_openpyxl.styles.fills import GradientFill, PatternFill
 
 
 class StyleWriter(object):
@@ -145,14 +146,7 @@ class StyleWriter(object):
                 self._unpack_color(node, fill.end_color.index, 'bgColor')
 
     def _write_gradient_fill(self, node, fill):
-        attrs = {}
-        for key in ('fill_type', 'degree', 'left', 'right', 'top', 'bottom'):
-            value = getattr(fill, key)
-            if value is not None:
-                attrs[key] = safe_string(value)
-        attrs['type'] = attrs['fill_type']
-        del attrs['fill_type']
-        node = SubElement(node, 'gradientFill', attrs)
+        node = SubElement(node, 'gradientFill', dict(fill))
         for color in fill.stop:
             self._unpack_color(node, color.index)
 
