@@ -5,7 +5,7 @@ from __future__ import absolute_import
 from collections import Mapping
 
 from legacy_openpyxl.compat import iteritems
-from legacy_openpyxl.styles import Font, PatternFill, Borders
+from legacy_openpyxl.styles import Font, PatternFill, Border
 
 
 class FormatRule(Mapping):

@@ -2,7 +2,7 @@
 
 import pytest
 
-from legacy_openpyxl.styles.borders import Borders
+from legacy_openpyxl.styles.borders import Border, Side
 from legacy_openpyxl.styles.fills import GradientFill
 from legacy_openpyxl.styles.colors import Color
 from legacy_openpyxl.writer.styles import StyleWriter
@@ -36,7 +36,7 @@ def test_write_gradient_fill():
 
 
 def test_write_borders():
-    borders = Borders()
+    borders = Border()
     writer = StyleWriter(DummyWorkbook())
     writer._write_border(writer._root, borders)
     xml = get_xml(writer._root)
